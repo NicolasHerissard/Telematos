@@ -11,8 +11,8 @@ class ProductLoan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_user',
-        'id_name_product',
+        'user_id',
+        'product_id',
         'take_product'
     ];
 

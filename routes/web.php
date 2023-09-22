@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('accueil');
 });
 
-Route::prefix('users')->name('users.')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('users.index');
-    Route::get('/create', [UserController::class, 'create'])->name('users.create');
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/registerUser', [UserController::class, 'registerUser'])->name('registerUser');
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/loginUser', [UserController::class, 'loginUser'])->name('loginUser');
+
+Route::prefix('/users')->name('users.')->group(function () {
+    Route::get('/index', [UserController::class, 'index'])->name('index');
+    Route::get('/create', [UserController::class, 'create'])->name('create');
 });
