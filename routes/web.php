@@ -14,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// route accueil
 Route::get('/', function () {
     return view('accueil');
 });
 
+// Route de connexion et inscription
 Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/registerUser', [UserController::class, 'registerUser'])->name('registerUser');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/loginUser', [UserController::class, 'loginUser'])->name('loginUser');
 
+// Route de création utilisateur
 Route::prefix('/users')->name('users.')->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('index');
     Route::get('/create', [UserController::class, 'create'])->name('create');

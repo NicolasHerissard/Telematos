@@ -15,11 +15,14 @@ class Product extends Model
 
     const CREATED_AT = 'created_at';
 
+    // initialisation des données à créer dans le Controller 
     protected $fillable = [
         'name_product',
         'stock',
     ];
 
+
+    // relation produit / utilisateur 
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);

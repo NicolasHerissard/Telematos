@@ -25,6 +25,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    // initialisation des données à créer dans le Controller 
     protected $fillable = [
         'name',
         'email',
@@ -51,6 +53,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // relation utilisateur / produit 
     public function product(): BelongsToMany
     {
         return $this->belongsToMany(Product::class);

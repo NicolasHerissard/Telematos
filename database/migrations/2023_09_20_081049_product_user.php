@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void // table relation entre utilisateur et produits 
     {
         Schema::create('product_user', function(Blueprint $table) {
             $table->id();
