@@ -10,6 +10,12 @@
     
     <h1>Login</h1>
 
+    @if (Session::has('error'))
+        <div class="error">
+            {{ Session::get('error') }}
+        </div>
+    @endif
+
     <form action="{{ route('loginUser') }}" method="get">
         <input type="text" placeholder="Nom" name="name">
         <input type="password" placeholder="Password" name="password">

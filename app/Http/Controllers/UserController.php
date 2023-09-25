@@ -9,43 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    // retourne la page login 
-    public function login()
-    {
-        return view('login');
-    }
-
-    // Check le name et le password
-    public function loginUser(Request $request)
-    {
-        $login = $request->only('name', 'password');
-        if(Auth::attempt($login))
-        {
-            return redirect()->route('home');
-        }
-
-        return redirect()->route('register');
-    }
-
-    // retourne la page register
-    public function register()
-    {
-        return view('register');
-    }
-
-    // crée un utilisateur
-    public function registerUser(Request $request)
-    {
-
-        User::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-        ]);
-
-        return redirect()->route('login');
-    }
-
     public function IsConnect()
     {
         if(!Auth::check())

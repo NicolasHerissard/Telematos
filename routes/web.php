@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 // route accueil
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-// Route de connexion et inscription
-Route::get('/register', [UserController::class, 'register'])->name('register');
-Route::post('/registerUser', [UserController::class, 'registerUser'])->name('registerUser');
-Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::get('/loginUser', [UserController::class, 'loginUser'])->name('loginUser');
+// Route d'inscription
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/registerUser', [RegisterController::class, 'registerUser'])->name('registerUser');
+
+// Route de connexion
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/loginUser', [LoginController::class, 'loginUser'])->name('loginUser');
 
 // Route de création utilisateur
 Route::prefix('/users')->name('users.')->group(function () {

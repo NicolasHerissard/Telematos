@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Ramsey\Uuid\Type\Integer;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductLoan>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductUser>
  */
-class ProductLoanFactory extends Factory
+class ProductUserFactory extends Factory
 {
     /**
      * Define the model's default state.
