@@ -30,7 +30,7 @@
     </header>
 
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 body{
     height: 100%;
@@ -151,11 +151,6 @@ header{
     font-weight: 700;
     font-size: 16px;
     height: 40px;
-}
-
-
-.bp-disc > button{
-    width: 150px;
 }
 
 .bp:hover{
