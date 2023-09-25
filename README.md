@@ -42,5 +42,7 @@ L'application de distribution de matériel pour le télétravail est une solutio
 2. Explorez l'inventaire, faites des demandes d'emprunt et suivez les emprunts en cours.
 3. Gérez les articles, les utilisateurs et les emprunts en tant qu'administrateur.
 
+- [Profile Nicolas](https://github.com/NicolasHerissard)
+- [Profile Dominik](https://github.com/Lakpoo)
 
 © TELEMATOS - [Site Web de l'Entreprise](telematos.tech)
