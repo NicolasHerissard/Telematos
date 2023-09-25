@@ -21,7 +21,7 @@ class UserController extends Controller
         $login = $request->only('name', 'password');
         if(Auth::attempt($login))
         {
-            return redirect()->route('users.index');
+            return redirect()->route('home');
         }
 
         return redirect()->route('register');

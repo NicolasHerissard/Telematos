@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // route accueil
-Route::get('/', function () {
-    return view('accueil');
-});
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Route de connexion et inscription
 Route::get('/register', [UserController::class, 'register'])->name('register');
