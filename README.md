@@ -33,7 +33,7 @@ L'application de distribution de matériel pour le télétravail est une solutio
 
 1. Clonez ce dépôt sur votre machine locale.
 2. Intaller les composer
-3. COnfigurer la base de données au projet
+3. Configurer la base de données au projet
 4. Exécutez l'application en utilisant un serveur web local.
 
 ## Utilisation
@@ -45,4 +45,4 @@ L'application de distribution de matériel pour le télétravail est une solutio
 - [Profile Nicolas](https://github.com/NicolasHerissard)
 - [Profile Dominik](https://github.com/Lakpoo)
 
-© TELEMATOS - [Site Web de l'Entreprise](telematos.tech)
+© TELEMATOS - [Site Web](telematos.tech)
