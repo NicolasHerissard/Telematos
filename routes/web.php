@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +34,8 @@ Route::get('/loginUser', [LoginController::class, 'loginUser'])->name('loginUser
 Route::prefix('/users')->name('users.')->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('index');
     Route::get('/create', [UserController::class, 'create'])->name('create');
+});
+
+Route::prefix('/productUser')->name('productUser.')->group(function () {
+    Route::post('/store', [ProductUserController::class, 'store'])->name('store');
 });

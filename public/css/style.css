@@ -194,3 +194,15 @@ header{
     border-bottom: 2px solid #33396c;
 }
 
+#number_product {
+    height: 30px;
+    width: 150px;
+}
+
+#btn_product {
+    margin-left: 10px;
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    font-size: large;
+}

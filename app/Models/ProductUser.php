@@ -10,6 +10,8 @@ class ProductUser extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     // initialisation des données à créer dans le Controller 
     protected $fillable = [
         'user_id',
