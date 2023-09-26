@@ -6,7 +6,7 @@
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
+    <title>Inscription</title>
 </head>
 <body>
     <header>
@@ -32,7 +32,7 @@
     </header>
 
     <div class="main">
-        <div class="form-inscr">
+        <div class="form-inscr-conn">
             <h1>Inscription</h1>
             <form action="{{ route('registerUser') }}" method="post">
             @csrf
@@ -44,5 +44,15 @@
         </div>
         
     </div>
+<!--
+<footer>
+    <form id="copyright" class="button" style="width: 120px;">© Copyright 2023</form>
+        <script> 
+        document.getElementById("copyright").addEventListener("click", function(event) { 
+            event.preventDefault(); alert("Copyright TKT"); 
+        }); 
+        </script>
+</footer>
+//-->
 </body>
 </html>

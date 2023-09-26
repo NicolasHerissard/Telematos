@@ -29,7 +29,7 @@
             </div>
         </div>
     </header>
-
+<!--
 <footer>
     <form id="copyright" class="button" style="width: 120px;">© Copyright 2023</form>
         <script> 
@@ -38,5 +38,6 @@
         }); 
         </script>
 </footer>
+//-->
 </body>
 </html>

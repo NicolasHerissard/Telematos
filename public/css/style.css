@@ -59,7 +59,7 @@ body{
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
-}
+}       
 
 .navMenu a:nth-child(3):hover ~ .dot {
   -webkit-transform: translateX(350px);
@@ -157,29 +157,29 @@ header{
     justify-content: center;
 }
 
-.form-inscr{
+.form-inscr-conn{
     margin-top: 20px;
     justify-content: center;
     flex-direction: column;
 }
 
-.form-inscr > h1 {
+.form-inscr-conn > h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.6em;
     display: flex;
     justify-content: center;
 }
 
-.form-inscr > form{
+.form-inscr-conn > form{
     display: flex;
     flex-direction: column;
 }
 
-.form-inscr > form > input ,.form-inscr > form > button{
+.form-inscr-conn > form > input ,.form-inscr-conn > form > button{
     margin: 20px 0 20px;
 }
 
-.form-inscr > form > button {
+.form-inscr-conn > form > button {
     margin-top: 30px;
     height: 40px;
     border-radius: 10px;
@@ -187,7 +187,7 @@ header{
     font-size: 1.2em;
 }
 
-.form-inscr > form > input{
+.form-inscr-conn > form > input{
     width: 400px;
     height: 40px;
     border: none;
