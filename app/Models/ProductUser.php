@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProductUser extends Model
@@ -20,8 +21,13 @@ class ProductUser extends Model
     ];
 
     // relation 
-    public function ProductUser(): HasMany
+    public function users(): HasMany
     {
-        return $this->hasMany(ProductLoan::class);
+        return $this->hasMany(Product::class, 'id', 'product_id');
+    }
+
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'product_users', 'id', '');
     }
 }

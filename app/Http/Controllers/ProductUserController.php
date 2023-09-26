@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\ProductUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductUserController extends Controller
 {
+    public function showProductUser($id)
+    {
+        $user = ProductUser::find($id);
+        return view('users/showProductUser', [
+            'user' => $user,
+        ]);
+    }
+
     public function store(Request $request)
     {
         $user_id = auth()->id();

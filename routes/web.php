@@ -37,5 +37,6 @@ Route::prefix('/users')->name('users.')->group(function () {
 });
 
 Route::prefix('/productUser')->name('productUser.')->group(function () {
+    Route::get('show/{id}', [ProductUserController::class, 'showProductUser'])->name('show');
     Route::post('/store', [ProductUserController::class, 'store'])->name('store');
 });
