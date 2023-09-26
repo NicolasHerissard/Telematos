@@ -151,3 +151,46 @@ header{
 .bp-general form:hover {
     color: #33396c;
 }
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.form-inscr{
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-inscr > h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6em;
+    display: flex;
+    justify-content: center;
+}
+
+.form-inscr > form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inscr > form > input ,.form-inscr > form > button{
+    margin: 20px 0 20px;
+}
+
+.form-inscr > form > button {
+    margin-top: 30px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2em;
+}
+
+.form-inscr > form > input{
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #33396c;
+}
+
