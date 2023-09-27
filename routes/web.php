@@ -29,6 +29,7 @@ Route::post('/registerUser', [RegisterController::class, 'registerUser'])->name(
 // Route de connexion
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/loginUser', [LoginController::class, 'loginUser'])->name('loginUser');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route de création utilisateur
 Route::prefix('/users')->name('users.')->group(function () {

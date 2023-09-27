@@ -24,4 +24,11 @@ class LoginController extends Controller
 
         return redirect()->route('login')->with('error', 'Nom ou mot de passe incorrect');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect()->route('login');
+    }
 }
