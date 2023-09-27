@@ -9,11 +9,16 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $user = auth()->user();
-        $product = Product::all();
-        return view('accueil', [
-            'products' => $product,
-            'user' => $user
-        ]);
+        if(auth()->id())
+        {
+            $user = auth()->user();
+            $product = Product::all();
+            return view('accueil', [
+                'products' => $product,
+                'user' => $user
+            ]);
+        }
+
+        return redirect()->route('login');
     }
 }

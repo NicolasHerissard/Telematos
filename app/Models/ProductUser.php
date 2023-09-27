@@ -11,6 +11,10 @@ class ProductUser extends Model
 {
     use HasFactory;
 
+    protected $table = 'product_users';
+
+    public $primaryKey = 'id';
+
     public $timestamps = false;
 
     // initialisation des données à créer dans le Controller 
@@ -23,11 +27,11 @@ class ProductUser extends Model
     // relation 
     public function users(): HasMany
     {
-        return $this->hasMany(Product::class, 'id', 'product_id');
+        return $this->hasMany(User::class, 'id');
     }
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'product_users', 'id', '');
+        return $this->belongsToMany(Product::class, 'product_users', 'product_id', 'take_product');
     }
 }

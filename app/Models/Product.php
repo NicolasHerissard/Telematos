@@ -25,6 +25,6 @@ class Product extends Model
     // relation produit / utilisateur 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'product_users');
     }
 }

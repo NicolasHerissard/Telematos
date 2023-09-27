@@ -31,13 +31,25 @@
         </div>
     </header>
 
-    <h1>Matériel emprunté de {{ $user->products }}</h1>
+    <div>
+        @foreach ($var as $item)
+            <div class="name_product">
+                {{ $item->name_product }}
+            </div>
+            {{-- <div class="quantity">
+                {{ $item->pivot }}
+            </div> --}}
+            {{-- {{ $take_product }} --}}
+        @endforeach
+    </div>
+
+    {{-- <h1>Matériel emprunté de {{ $user->products }}</h1>
 
     @foreach ($user->users as $item)
         <div>
             {{ $item }}
         </div>
-    @endforeach
+    @endforeach --}}
     
 </body>
 </html>

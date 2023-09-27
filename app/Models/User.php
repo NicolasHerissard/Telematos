@@ -54,9 +54,9 @@ class User extends Authenticatable
     ];
 
     // relation utilisateur / produit 
-    public function product(): BelongsToMany
+    public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'product_users');
     }
 
 }

@@ -47,6 +47,7 @@
         <thead>
             <tr>
                 <td>Produit</td>
+                <td>Stock disponible</td>
                 <td>Quantité</td>
             </tr>
         </thead>
@@ -56,6 +57,7 @@
                 @csrf
                     <tr>
                         <td>{{ $item->name_product }} <input name="product_id" value="{{ $item->id }}" hidden></td>
+                        <td>{{ $item->stock }}</td>
                         <td><input type="number" id="number_product" name="take_product"></td>
                         <td><button type="submit" id="btn_product">Choisir</button></td>
                     </tr>

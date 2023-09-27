@@ -11,9 +11,12 @@ class ProductUserController extends Controller
 {
     public function showProductUser($id)
     {
-        $user = ProductUser::find($id);
+        $var = User::find($id)->products;
+        $take_product = ProductUser::find($id);
+
         return view('users/showProductUser', [
-            'user' => $user,
+            'var' => $var,
+            'take_product' => $take_product
         ]);
     }
 
