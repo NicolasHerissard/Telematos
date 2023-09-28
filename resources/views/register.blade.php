@@ -16,7 +16,7 @@
         <div class="nav-right">
             <nav class="navMenu">
                 <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
-                <a class="mon-materiel" href="{{ route('productUser.show', $user->id) }}">Mon Matériel</a>
+                <a class="mon-materiel" href="">Mon Matériel</a>
                 <a class="admin" href="/admin" style="width: 80px;">Admin</a>
                 <div class="dot"></div>
             </nav>
