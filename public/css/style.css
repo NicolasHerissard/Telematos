@@ -206,3 +206,10 @@ header{
     border-radius: 5px;
     font-size: large;
 }
+
+.error{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
