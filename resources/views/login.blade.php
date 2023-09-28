@@ -34,17 +34,16 @@
     <div class="main">
         <div class="form-inscr-conn">
             <h1>Connexion</h1>
-                @if (Session::has('error'))
-                <div class="error">
-                    {{ Session::get('error') }}
-                </div>
-                @endif
-
             <form action="{{ route('loginUser') }}" method="get">
                 <input type="text" placeholder="Nom" name="name">
                 <input type="password" placeholder="Password" name="password">
                 <button>Connexion</button>
             </form>
+            @if (Session::has('error'))
+                <div class="error">
+                    {{ Session::get('error') }}
+                </div>
+                @endif
         </div>
     </div>
 <!--
