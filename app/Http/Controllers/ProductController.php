@@ -45,4 +45,19 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
     }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function update(Request $request, $id)
+    {
+
+    }
+
+    public function delete($id)
+    {
+
+    }
 }
