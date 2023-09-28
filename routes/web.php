@@ -31,6 +31,9 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/loginUser', [LoginController::class, 'loginUser'])->name('loginUser');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Route d'admin
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+
 // Route de création utilisateur
 Route::prefix('/users')->name('users.')->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('index');

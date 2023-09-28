@@ -30,31 +30,5 @@
             </div>
         </div>
     </header>
-
-    <div class="main">
-        <div class="form-inscr-conn">
-            <h1>Connexion</h1>
-            <form action="{{ route('loginUser') }}" method="get">
-                <input type="text" placeholder="Nom" name="name">
-                <input type="password" placeholder="Password" name="password">
-                <button>Connexion</button>
-            </form>
-            @if (Session::has('error'))
-                <div class="error">
-                    {{ Session::get('error') }}
-                </div>
-            @endif
-        </div>
-    </div>
-<!--
-<footer>
-    <form id="copyright" class="button" style="width: 120px;">© Copyright 2023</form>
-        <script> 
-        document.getElementById("copyright").addEventListener("click", function(event) { 
-            event.preventDefault(); alert("Copyright TKT"); 
-        }); 
-        </script>
-</footer>
-//-->
 </body>
 </html>

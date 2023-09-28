@@ -14,4 +14,9 @@ class ProductController extends Controller
             'product' => $product
         ]);
     }
+
+    public function add()
+    {
+        // todo fonction pour ajouter des product qu'on pourra utilise dans un formulaire dans le pannel admin
+    }
 }
