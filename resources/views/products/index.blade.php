@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Création utilisateurs</title>
+    <title>Produits</title>
 </head>
 <body>
     <header>
@@ -38,29 +38,29 @@
         @endif
     </header>
     
-    <form action="{{ route('admin.createUsers') }}" method="post">
-        @csrf
-            <div class="create-users">
-                <div class="name-users">
-                    <label for="name">Nom</label>
-                    <input type="text" name="name" placeholder="Nom">
-                </div>
-                <div class="email-users">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="email">
-                </div>
-                <div class="password-users">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" placeholder="password">
-                </div>
-                <div class="role-users">
-                    <label for="role">role</label>
-                    <input type="text" name="isadmin" placeholder="role">
-                </div>
-                <div class="btn-submit">
-                    <button type="submit">Enregistrer</button>
-                </div>
-            </div>
-    </form>
+    <div class="products">
+        <div class="list-products">
+            <h2>Listes des produits</h2>
+
+            <a href="{{ route('admin.products.create') }}">Créer un produit</a>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nom du produit</td>
+                        <td>Stock restant</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($products as $item)
+                        <tr>
+                            <td>{{ $item->name_product }}</td>
+                            <td>{{ $item->stock }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        
 </body>
 </html>

@@ -6,7 +6,7 @@
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connexion</title>
+    <title>Admin</title>
 </head>
 <body>
     <header>
@@ -17,18 +17,36 @@
             <nav class="navMenu">
                 <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
                 <a class="mon-materiel" href="">Mon Matériel</a>
-                <a class="admin" href="/admin" style="width: 80px;">Admin</a>
+                {{-- <a class="admin" href="/admin" style="width: 80px;">Admin</a> --}}
                 <div class="dot"></div>
             </nav>
         </div>
-        <div class="bp-general">
-            <div class="bp-inscr">
-                <form action="register"><button class="bp">S'inscrire</button></form>
+
+        @if (!Auth::check())
+            <div class="bp-general">
+                <div class="bp-inscr">
+                    <form action="register"><button class="bp">S'inscrire</button></form>
+                </div>
+                <div class="bp-conn">
+                    <form action="login"><button class="bp">Se Connecter</button></form>
+                </div>
             </div>
-            <div class="bp-conn">
-                <form action="login"><button class="bp">Se Connecter</button></form>
+        @else
+            <div class="disconnect">
+                <form action="/logout"><button class="bp">Se déconnecter</button></form>
             </div>
-        </div>
+        @endif
     </header>
+
+    <h1>Bienvenue {{ $admin->name }} dans le panel administratif</h1>
+
+    <div class="btn-users">
+        <form action="{{ route('admin.users') }}"><button>Voir les utilisateurs</button></form>
+    </div>
+
+    <div class="btn-products">
+        <form action="{{ route('admin.products') }}"><button>Voir les produits</button></form>
+    </div>
+
 </body>
 </html>

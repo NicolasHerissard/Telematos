@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="/css/reset.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <title>Listes utilisateurs</title>
 </head>
 <body>
+    <header>
+        <div class="nav-left">
+            <a class="text-logo" href="/">TELEMATOS</a>
+        </div>
+        <div class="nav-right">
+            <nav class="navMenu">
+                <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
+                <a class="mon-materiel" href="">Mon Matériel</a>
+                {{-- <a class="admin" href="/admin" style="width: 80px;">Admin</a> --}}
+                <div class="dot"></div>
+            </nav>
+        </div>
+
+        @if (!Auth::check())
+            <div class="bp-general">
+                <div class="bp-inscr">
+                    <form action="register"><button class="bp">S'inscrire</button></form>
+                </div>
+                <div class="bp-conn">
+                    <form action="login"><button class="bp">Se Connecter</button></form>
+                </div>
+            </div>
+        @else
+            <div class="disconnect">
+                <form action="/logout"><button class="bp">Se déconnecter</button></form>
+            </div>
+        @endif
+    </header>
     
-    
+    <div class="users">
+        <div class="list-users">
+            <h2>Listes des utilisateurs</h2>
+
+            <a href="{{ route('admin.users.create') }}">Créer un utilisateur</a>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Nom</td>
+                        <td>Email</td>
+                        <td>Role</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $item)
+                        @if ($item->isadmin == '1')
+                            <input type="hidden" value="{{$item->isadmin = 'Admin'}}">
+                        @else
+                            <input type="hidden" value="{{$item->isadmin = 'Utilisateur'}}">
+                        @endif
+                            <tr>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->isadmin }}</td>
+                            </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 </html>

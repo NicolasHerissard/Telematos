@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('created_at')->nullable();
+            $table->integer('isadmin')->default('0');
         });
     }
 

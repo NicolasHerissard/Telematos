@@ -32,12 +32,15 @@ Route::get('/loginUser', [LoginController::class, 'loginUser'])->name('loginUser
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route d'admin
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
-// Route de création utilisateur
-Route::prefix('/users')->name('users.')->group(function () {
-    Route::get('/index', [UserController::class, 'index'])->name('index');
-    Route::get('/create', [UserController::class, 'create'])->name('create');
+Route::prefix('/admin')->name('admin.')->group(function () {
+    Route::get('/', [LoginController::class, 'admin'])->name('admin');
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users/create/createUser', [UserController::class, 'store'])->name('createUsers');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products/create/createProduct', [ProductController::class, 'store'])->name('createProduct');
 });
 
 Route::prefix('/productUser')->name('productUser.')->group(function () {

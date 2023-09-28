@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Création utilisateurs</title>
+    <title>Créer produits</title>
 </head>
 <body>
     <header>
@@ -38,29 +38,22 @@
         @endif
     </header>
     
-    <form action="{{ route('admin.createUsers') }}" method="post">
+    <form action="{{ route('admin.createProduct') }}" method="post">
         @csrf
-            <div class="create-users">
-                <div class="name-users">
-                    <label for="name">Nom</label>
-                    <input type="text" name="name" placeholder="Nom">
-                </div>
-                <div class="email-users">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="email">
-                </div>
-                <div class="password-users">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" placeholder="password">
-                </div>
-                <div class="role-users">
-                    <label for="role">role</label>
-                    <input type="text" name="isadmin" placeholder="role">
-                </div>
-                <div class="btn-submit">
-                    <button type="submit">Enregistrer</button>
-                </div>
+        <div class="create-products">
+            <div class="name_product-products">
+                <label for="name_product">Nom du produit</label>
+                <input type="text" name="name_product" placeholder="Nom du produit">
             </div>
+            <div class="stock-products">
+                <label for="stock">Stock</label>
+                <input type="text" name="stock" placeholder="stock">
+            </div>
+            <div class="btn-submit">
+                <button type="submit">Enregistrer</button>
+            </div>
+        </div>
     </form>
+
 </body>
 </html>

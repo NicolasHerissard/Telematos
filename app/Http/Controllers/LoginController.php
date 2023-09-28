@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +21,11 @@ class LoginController extends Controller
         $login = $request->only('name', 'password');
         if(Auth::attempt($login))
         {
+            if(auth()->user()->isadmin == '1')
+            {
+                return redirect()->route('admin.admin');
+            }
+            
             return redirect()->route('home');
         }
 
@@ -29,6 +36,20 @@ class LoginController extends Controller
     {
         auth()->logout();
 
+        return redirect()->route('login');
+    }
+
+    public function admin()
+    {
+        $admin = auth()->user();
+
+        if($admin != "")
+        {
+            return view('admin', [
+                'admin' => $admin,
+            ]);
+        }
+        
         return redirect()->route('login');
     }
 }

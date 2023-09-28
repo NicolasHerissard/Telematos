@@ -42,14 +42,6 @@
             {{-- {{ $take_product }} --}}
         @endforeach
     </div>
-
-    {{-- <h1>Matériel emprunté de {{ $user->products }}</h1>
-
-    @foreach ($user->users as $item)
-        <div>
-            {{ $item }}
-        </div>
-    @endforeach --}}
     
 </body>
 </html>

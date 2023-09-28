@@ -213,3 +213,37 @@ header{
     justify-content: center;
     color: red;
 }
+
+h1 {
+    font-size: large;
+}
+
+.users {
+    padding: 30px 50px;
+    display: flex;
+}
+
+table {
+    border-collapse: separate;
+}
+
+td {
+    padding: 10px 2rem;
+}
+
+.users > h2 {
+    margin: 0 50px;
+    margin-bottom: 35px;
+}
+
+.products {
+    padding: 30px 50px;
+    height: auto;
+    width: auto;
+    display: flex;
+}
+
+.products > h2 {
+    margin: 0 50px;
+    margin-bottom: 35px;
+}

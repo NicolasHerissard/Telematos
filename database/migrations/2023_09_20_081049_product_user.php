@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void // table relation entre utilisateur et produits 
     {
-        Schema::create('product_user', function(Blueprint $table) {
+        Schema::create('product_users', function(Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
