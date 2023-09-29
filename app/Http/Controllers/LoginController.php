@@ -21,11 +21,6 @@ class LoginController extends Controller
         $login = $request->only('name', 'password');
         if(Auth::attempt($login))
         {
-            if(auth()->user()->isadmin == '1')
-            {
-                return redirect()->route('admin.admin');
-            }
-            
             return redirect()->route('home');
         }
 
