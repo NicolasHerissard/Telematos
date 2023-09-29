@@ -224,16 +224,30 @@ h1 {
 }
 
 table {
-    border-collapse: separate;
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: 1.5rem;
 }
 
 td {
     padding: 10px 2rem;
+    border: 1px solid rgb(190, 190, 190);
+    text-align: center;
 }
 
-.users > h2 {
-    margin: 0 50px;
-    margin-bottom: 35px;
+.users h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.users a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.users a:hover {
+    color: red;
 }
 
 .products {
@@ -243,7 +257,37 @@ td {
     display: flex;
 }
 
-.products > h2 {
-    margin: 0 50px;
-    margin-bottom: 35px;
+.products h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.products a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.products a:hover {
+    color: red;
+}
+
+.btn-action {
+    display: flex;
+    margin: 0 2%;
+    text-align: center;
+}
+
+#btn-delete {
+    margin-right: 50px;
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    font-size: large;
+}
+
+#btn-edit {
+    height: 50px;
+    width: 120px;
+    border-radius: 5px;
+    font-size: large;
 }

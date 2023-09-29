@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Produits</title>
+    <title>Listes produits</title>
 </head>
 <body>
     <header>
@@ -49,6 +49,7 @@
                     <tr>
                         <td>Nom du produit</td>
                         <td>Stock restant</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,16 @@
                         <tr>
                             <td>{{ $item->name_product }}</td>
                             <td>{{ $item->stock }}</td>
+                            <td>
+                                <div class="btn-action">
+                                    <form action="" method="post">
+                                        <button id="btn-delete">Supprimer</button>
+                                    </form>
+                                    <form action="" method="get">
+                                        <button id="btn-edit">Modifier</button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

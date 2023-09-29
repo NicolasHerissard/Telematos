@@ -50,6 +50,7 @@
                         <td>Nom</td>
                         <td>Email</td>
                         <td>Role</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,6 +64,16 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->isadmin }}</td>
+                                <td>
+                                    <div class="btn-action">
+                                        <form action="" method="post">
+                                            <button id="btn-delete">Supprimer</button>
+                                        </form>
+                                        <form action="" method="get">
+                                            <button id="btn-edit">Modifier</button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                     @endforeach
                 </tbody>
