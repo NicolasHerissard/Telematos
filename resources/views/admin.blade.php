@@ -38,14 +38,17 @@
         @endif
     </header>
 
-    <h1>Bienvenue {{ $admin->name }} dans le panel administratif</h1>
+    <div class="admin-acceuil">
+        <h1>Bienvenue {{ $admin->name }} dans le panel administratif</h1>
+        <div class="bp-general">
+            <div class="btn-users">
+                <form action="{{ route('admin.users') }}"><button>Voir les utilisateurs</button></form>
+            </div>
 
-    <div class="btn-users">
-        <form action="{{ route('admin.users') }}"><button>Voir les utilisateurs</button></form>
-    </div>
-
-    <div class="btn-products">
-        <form action="{{ route('admin.products') }}"><button>Voir les produits</button></form>
+            <div class="btn-products">
+                <form action="{{ route('admin.products') }}"><button>Voir les produits</button></form>
+            </div>
+        </div>
     </div>
 
 </body>
