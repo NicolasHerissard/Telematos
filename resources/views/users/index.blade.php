@@ -17,7 +17,9 @@
             <nav class="navMenu">
                 <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
                 <a class="mon-materiel" href="">Mon Matériel</a>
-                {{-- <a class="admin" href="/admin" style="width: 80px;">Admin</a> --}}
+                @if ($user->isadmin == '1')
+                    <a class="admin" href="/admin" style="width: 80px;">Admin</a>
+                @endif
                 <div class="dot"></div>
             </nav>
         </div>
@@ -41,6 +43,17 @@
     <div class="users">
         <div class="list-users">
             <h2>Listes des utilisateurs</h2>
+
+            @if (Session::has('success'))
+                <div class="success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+            @if (Session::has('error'))
+                <div class="error">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
 
             <a href="{{ route('admin.users.create') }}">Créer un utilisateur</a>
 
@@ -66,10 +79,12 @@
                                 <td>{{ $item->isadmin }}</td>
                                 <td>
                                     <div class="btn-action">
-                                        <form action="" method="post">
+                                        <form action="{{ route('admin.users.delete', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
                                             <button id="btn-delete">Supprimer</button>
                                         </form>
-                                        <form action="" method="get">
+                                        <form action="{{ route('admin.users.edit', $item->id) }}" method="get">
                                             <button id="btn-edit">Modifier</button>
                                         </form>
                                     </div>

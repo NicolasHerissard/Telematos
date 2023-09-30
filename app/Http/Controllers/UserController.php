@@ -50,16 +50,36 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        
+        $user = User::find($id);
+        return view('users.edit', [
+            'user' => $user
+        ]);
     }
 
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->isadmin = $request->input('isadmin');
 
+        $user->save();
+
+        return redirect()->route('admin.users')->with('success', 'Utilisateur modifier');
     }
 
     public function delete($id)
     {
+        $id_user = auth()->id();
+        if($id != $id_user)
+        {
+            $user = User::find($id);
+            $user->delete();
 
+            return redirect()->route('admin.users')->with('success', 'Utilisateur supprimer');
+        }
+
+        return redirect()->route('admin.users')->with('error', 'Vous ne pouvez pas supprimer votre propre utilisateur');
     }
 }

@@ -17,7 +17,9 @@
             <nav class="navMenu">
                 <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
                 <a class="mon-materiel" href="">Mon Matériel</a>
-                {{-- <a class="admin" href="/admin" style="width: 80px;">Admin</a> --}}
+                @if ($user->isadmin == '1')
+                    <a class="admin" href="/admin" style="width: 80px;">Admin</a>
+                @endif
                 <div class="dot"></div>
             </nav>
         </div>
@@ -42,6 +44,17 @@
         <div class="list-products">
             <h2>Listes des produits</h2>
 
+            @if (Session::has('success'))
+            <div class="success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
+            @if (Session::has('error'))
+                <div class="error">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
+
             <a href="{{ route('admin.products.create') }}">Créer un produit</a>
 
             <table>
@@ -59,10 +72,13 @@
                             <td>{{ $item->stock }}</td>
                             <td>
                                 <div class="btn-action">
-                                    <form action="" method="post">
+                                    <form action={{ route('admin.products.delete', [$item->id]) }} method="post">
+                                        @csrf
+                                        @method('DELETE')
                                         <button id="btn-delete">Supprimer</button>
                                     </form>
-                                    <form action="" method="get">
+                                    <form action={{ route('admin.products.edit', [$item->id]) }} method="get">
+                                        @csrf
                                         <button id="btn-edit">Modifier</button>
                                     </form>
                                 </div>
