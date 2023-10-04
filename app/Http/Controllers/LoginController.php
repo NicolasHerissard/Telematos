@@ -12,7 +12,10 @@ class LoginController extends Controller
     // retourne la page login 
     public function login()
     {
-        return view('login');
+        $user = auth()->user();
+        return view('login', [
+            'user' => $user
+        ]);
     }
 
     // Check le name et le password
@@ -37,11 +40,13 @@ class LoginController extends Controller
     public function admin()
     {
         $admin = auth()->user();
+        $user = auth()->user();
 
         if($admin != "")
         {
             return view('admin', [
                 'admin' => $admin,
+                'user' => $user
             ]);
         }
         
