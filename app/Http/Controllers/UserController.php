@@ -12,17 +12,22 @@ class UserController extends Controller
     // retourne la page des utilisateurs rempli avec les données de la bdd 
     public function index()
     {
+        $user = auth()->user();
         $users = User::all();
 
         return view('users.index', [
-            'users' => $users
+            'users' => $users,
+            'user' => $user
         ]);
     }
 
     // retourne la page de création utilisateurs 
     public function create()
     {
-        return view('users.create');
+        $user = auth()->user();
+        return view('users.create', [
+            'user' => $user
+        ]);
     }
 
     public function store(Request $request)
