@@ -291,3 +291,17 @@ td {
     border-radius: 5px;
     font-size: large;
 }
+
+.admin-acceuil{
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+}
+
+.admin-acceuil > h1{
+    margin-bottom: 20px;
+}
+
+.btn-products{
+    margin-left: 20px;
+}

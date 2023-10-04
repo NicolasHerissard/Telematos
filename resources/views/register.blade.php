@@ -34,6 +34,13 @@
     <div class="main">
         <div class="form-inscr-conn">
             <h1>Inscription</h1>
+
+            @if (Session::has('error'))
+                <div class="error">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
+
             <form action="{{ route('registerUser') }}" method="post">
             @csrf
                 <input type="text" placeholder="Nom" name="name">

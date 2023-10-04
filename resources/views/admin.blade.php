@@ -17,7 +17,9 @@
             <nav class="navMenu">
                 <a class="acceuil" href="/" style="width: 140px;">Accueil</a>
                 <a class="mon-materiel" href="">Mon Matériel</a>
-                {{-- <a class="admin" href="/admin" style="width: 80px;">Admin</a> --}}
+                @if ($admin->isadmin == '1')
+                    <a class="admin" href="/admin" style="width: 80px;">Admin</a>
+                @endif
                 <div class="dot"></div>
             </nav>
         </div>
@@ -38,14 +40,17 @@
         @endif
     </header>
 
-    <h1>Bienvenue {{ $admin->name }} dans le panel administratif</h1>
+    <div class="admin-acceuil">
+        <h1>Bienvenue {{ $admin->name }} dans le panel administratif</h1>
+        <div class="bp-general">
+            <div class="btn-users">
+                <form action="{{ route('admin.users') }}"><button>Voir les utilisateurs</button></form>
+            </div>
 
-    <div class="btn-users">
-        <form action="{{ route('admin.users') }}"><button>Voir les utilisateurs</button></form>
-    </div>
-
-    <div class="btn-products">
-        <form action="{{ route('admin.products') }}"><button>Voir les produits</button></form>
+            <div class="btn-products">
+                <form action="{{ route('admin.products') }}"><button>Voir les produits</button></form>
+            </div>
+        </div>
     </div>
 
 </body>
