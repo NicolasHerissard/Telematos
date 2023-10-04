@@ -49,6 +49,8 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/products/update/{id}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/delete/{id}', [ProductController::class, 'delete'])->name('products.delete');
+
+    Route::get('/productUser', [ProductUserController::class, 'showAll'])->name('productUser');
 });
 
 Route::prefix('/productUser')->name('productUser.')->group(function () {

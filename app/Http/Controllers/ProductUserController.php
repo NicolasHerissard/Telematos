@@ -20,6 +20,17 @@ class ProductUserController extends Controller
         ]);
     }
 
+    public function showAll()
+    {
+        $productUser = ProductUser::all();
+        $user = User::all();
+
+        return view('productUser.show', [
+            'productUser' => $productUser,
+            'user' => $user
+        ]);
+    }
+
     public function store(Request $request)
     {
         $user_id = auth()->id();
@@ -50,6 +61,6 @@ class ProductUserController extends Controller
 
     public function delete($id)
     {
-
+        
     }
 }
