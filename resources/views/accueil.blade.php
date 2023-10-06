@@ -16,7 +16,7 @@
             {{ Session::get('error') }}
         </div>
     @endif
-
+        {{-- Tache en cours par Sofyane (en cours de Design) --}}
     <table>
         <thead>
             <tr>
