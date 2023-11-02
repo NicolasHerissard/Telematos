@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
     <div class="nav-left">
         <a class="text-logo" href="/"><img id="logo" src="PC_Mac.png" alt="Logo" width="170px" height="100px"></a>

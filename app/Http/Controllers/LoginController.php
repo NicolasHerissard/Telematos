@@ -40,11 +40,15 @@ class LoginController extends Controller
     public function admin()
     {
         $user = auth()->user();
+        $list_user = User::all();
+        $list_product = Product::all();
 
         if($user->isadmin == 1)
         {
             return view('admin', [
-                'user' => $user
+                'user' => $user,
+                'users' => $list_user,
+                'products' => $list_product
             ]);
         }
         
