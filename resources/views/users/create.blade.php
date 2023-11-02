@@ -11,6 +11,8 @@
 <body>
     
     @include('component/header')
+
+    @include('component/sidebar')
     
     <form action="{{ route('admin.createUsers') }}" method="post">
         @csrf

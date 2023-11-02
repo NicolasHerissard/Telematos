@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/reset.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
 </head>
@@ -13,20 +13,8 @@
     @include('component/header')
 
     <div class="body">
-        <nav class="nav">
-            <div class="btn">
-                <button>Voir les utilisateurs</button>
-            </div>
-            <div class="btn">
-                <button>Créer un utilisateur</button>
-            </div>
-            <div class="btn">
-                <button>Voir les produits</button>
-            </div>
-            <div class="btn">
-                <button>Créer un produit</button>
-            </div>
-        </nav>
+        
+        @include('component/sidebar')
 
         <div class="container">
             <div class="list-users">
