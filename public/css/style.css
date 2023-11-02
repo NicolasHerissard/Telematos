@@ -131,13 +131,9 @@ header{
     flex-direction: column;
 }
 
-.form-inscr-conn > input:active{
-    border: none;
-}
-
 .form-inscr-conn > form > input ,.form-inscr-conn > form > button{
     margin: 20px 0 20px;
-    
+    outline: none;
 }
 
 .form-inscr-conn > form > button {
