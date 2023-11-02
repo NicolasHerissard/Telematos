@@ -12,79 +12,117 @@ class UserController extends Controller
     // retourne la page des utilisateurs rempli avec les données de la bdd 
     public function index()
     {
-        $user = auth()->user();
+        $auth_user = auth()->user();
         $users = User::all();
 
-        return view('users.index', [
-            'users' => $users,
-            'user' => $user
-        ]);
+        if($auth_user->isadmin == 1)
+        {
+            return view('users.index', [
+                'users' => $users,
+                'user' => $auth_user
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     // retourne la page de création utilisateurs 
     public function create()
     {
         $user = auth()->user();
-        return view('users.create', [
-            'user' => $user
-        ]);
+
+        if($user->isadmin == 1)
+        {            
+            return view('users.create', [
+                'user' => $user
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     public function store(Request $request)
     {
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $isadmin = $request->input('isadmin');
+        $user = auth()->user();
 
-        if($name != "" && $email != "" && $password != "" && $isadmin != "")
+        if($user->isadmin == 1)
         {
-            User::create([
-                'name' => $name,
-                'email' => $email,
-                'password' => $password,
-                'isadmin' => $isadmin
-            ]);
+            $name = $request->input('name');
+            $email = $request->input('email');
+            $password = $request->input('password');
+            $isadmin = $request->input('isadmin');
 
-            return redirect()->route('admin.users')->with('success', 'Utilisateur créer avec succès');
+            if($name != "" && $email != "" && $password != "" && $isadmin != "")
+            {
+                User::create([
+                    'name' => $name,
+                    'email' => $email,
+                    'password' => $password,
+                    'isadmin' => $isadmin
+                ]);
+
+                return redirect()->route('admin.users')->with('success', 'Utilisateur créer avec succès');
+            }
+
+            return redirect()->route('admin.users.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
         }
 
-        return redirect()->route('admin.users.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
-
+        return redirect()->route('home');
     }
 
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', [
-            'user' => $user
-        ]);
+        $user = auth()->user();
+
+        if($user->isadmin == 1)
+        {
+            $user = User::find($id);
+            return view('users.edit', [
+                'user' => $user
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->isadmin = $request->input('isadmin');
+        $users = auth()->user();
 
-        $user->save();
+        if($users->isadmin == 1)
+        {
+            $user = User::find($id);
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = $request->input('password');
+            $user->isadmin = $request->input('isadmin');
 
-        return redirect()->route('admin.users')->with('success', 'Utilisateur modifier');
+            $user->save();
+
+            return redirect()->route('admin.users')->with('success', 'Utilisateur modifier');
+        }
+        
+        return redirect()->route('home');
     }
 
     public function delete($id)
     {
-        $id_user = auth()->id();
-        if($id != $id_user)
+        $users = auth()->user();
+        
+        if($users->isadmin == 1)
         {
-            $user = User::find($id);
-            $user->delete();
+            $id_user = auth()->id();
+            if($id != $id_user)
+            {
+                $user = User::find($id);
+                $user->delete();
 
-            return redirect()->route('admin.users')->with('success', 'Utilisateur supprimer');
+                return redirect()->route('admin.users')->with('success', 'Utilisateur supprimer');
+            }
+
+            return redirect()->route('admin.users')->with('error', 'Vous ne pouvez pas supprimer votre propre utilisateur');
         }
 
-        return redirect()->route('admin.users')->with('error', 'Vous ne pouvez pas supprimer votre propre utilisateur');
+        return redirect()->route('home');
     }
 }

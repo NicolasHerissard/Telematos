@@ -33,50 +33,6 @@ body{
     color: #33396c;
 }
 
-.navMenu .dot {
-    width: 6px;
-    height: 6px;
-    background: #33396c;
-    border-radius: 50%;
-    opacity: 0;
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.navMenu a:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(30px);
-  transform: translateX(30px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(185px);
-  transform: translateX(185px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}       
-
-.navMenu a:nth-child(3):hover ~ .dot {
-  -webkit-transform: translateX(350px);
-  transform: translateX(350px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
-.navMenu a:nth-child(4):hover ~ .dot {
-  -webkit-transform: translateX(250px);
-  transform: translateX(285px);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  opacity: 1;
-}
-
 header{
     display: flex;
     margin-top: 20px;
@@ -175,8 +131,13 @@ header{
     flex-direction: column;
 }
 
+.form-inscr-conn > input:active{
+    border: none;
+}
+
 .form-inscr-conn > form > input ,.form-inscr-conn > form > button{
     margin: 20px 0 20px;
+    
 }
 
 .form-inscr-conn > form > button {

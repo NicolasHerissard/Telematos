@@ -18,66 +18,105 @@ class ProductController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $products = Product::all();
-        return view('products.index', [
-            'products' => $products,
-            'user' => $user
-        ]);
+
+        if($user->isadmin == 1)
+        {
+            $products = Product::all();
+            return view('products.index', [
+                'products' => $products,
+                'user' => $user
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     public function create()
     {
         $user = auth()->user();
-        return view('products.create', [
-            'user' => $user
-        ]);
+
+        if($user->isadmin == 1)
+        {
+            return view('products.create', [
+                'user' => $user
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     public function store(Request $request)
     {
-        $name_product = $request->input('name_product');
-        $stock = $request->input('stock');
+        $user = auth()->user();
 
-        if($name_product != "" && $stock != "")
+        if($user->isadmin == 1)
         {
-            Product::create([
-                'name_product' => $name_product,
-                'stock' => $stock
-            ]);
+            $name_product = $request->input('name_product');
+            $stock = $request->input('stock');
 
-            return redirect()->route('admin.products')->with('success', 'Produit créer avec succès');
+            if($name_product != "" && $stock != "")
+            {
+                Product::create([
+                    'name_product' => $name_product,
+                    'stock' => $stock
+                ]);
+
+                return redirect()->route('admin.products')->with('success', 'Produit créer avec succès');
+            }
+
+            return redirect()->route('admin.products.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
         }
 
-        return redirect()->route('admin.products.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
+        return redirect()->route('home');
     }
 
     public function edit($id)
     {
         $product = Product::find($id);
         $user = auth()->user();
-        return view('products.edit', [
-            'product' => $product,
-            'user' => $user
-        ]);
+
+        if($user->isadmin == 1)
+        {
+            return view('products.edit', [
+                'product' => $product,
+                'user' => $user
+            ]);
+        }
+        
+        return redirect()->route('home');
     }
 
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
-        $product->name_product = $request->input('name_product');
-        $product->stock = $request->input('stock');
+        $user = auth()->user();
 
-        $product->save();
+        if($user->isadmin == 1)
+        {
+            $product = Product::find($id);
+            $product->name_product = $request->input('name_product');
+            $product->stock = $request->input('stock');
 
-        return redirect()->route('admin.products')->with('success', 'Produit modifier');
+            $product->save();
+
+            return redirect()->route('admin.products')->with('success', 'Produit modifier');
+        }
+
+        return redirect()->route('home');
     }
 
     public function delete($id)
     {
-        $product = Product::find($id);
+        $user = auth()->user();
 
-        $product->delete();
+        if($user->isadmin == 1)
+        {
+            $product = Product::find($id);
 
-        return redirect()->route('admin.products')->with('success', 'Produit Supprimer');
+            $product->delete();
+
+            return redirect()->route('admin.products')->with('success', 'Produit Supprimer');
+        }
+
+        return redirect()->route('home');
     }
 }

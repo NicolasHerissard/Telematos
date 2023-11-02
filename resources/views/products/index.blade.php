@@ -44,12 +44,12 @@
                             <td>{{ $item->stock }}</td>
                             <td>
                                 <div class="btn-action">
-                                    <form action={{ route('admin.products.delete', [$item->id]) }} method="post">
+                                    <form action="{{ route('admin.products.delete', [$item->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button id="btn-delete">Supprimer</button>
                                     </form>
-                                    <form action={{ route('admin.products.edit', [$item->id]) }} method="get">
+                                    <form action="{{ route('admin.products.edit', [$item->id]) }}" method="get">
                                         @csrf
                                         <button id="btn-edit">Modifier</button>
                                     </form>

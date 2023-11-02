@@ -39,17 +39,15 @@ class LoginController extends Controller
 
     public function admin()
     {
-        $admin = auth()->user();
         $user = auth()->user();
 
-        if($admin != "")
+        if($user->isadmin == 1)
         {
             return view('admin', [
-                'admin' => $admin,
                 'user' => $user
             ]);
         }
         
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 }
