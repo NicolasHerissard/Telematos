@@ -51,6 +51,17 @@ class ProductUserController extends Controller
         return redirect()->route('home');
     }
 
+    public function update_stock(Request $request, $id)
+    {
+        $pr = Product::find($id);
+        $pr->stock = $request->only('stock');
+        $pr->stock = $pr->stock - $request->input('stock');
+
+        $pr->save();
+
+        return redirect()->route('home');
+    }
+
     public function edit($id)
     {
         

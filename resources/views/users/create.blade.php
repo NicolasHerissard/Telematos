@@ -11,30 +11,34 @@
 <body>
     
     @include('component/header')
-    
-    <form action="{{ route('admin.createUsers') }}" method="post">
-        @csrf
-            <div class="create-users">
-                <div class="name-users">
-                    <label for="name">Nom</label>
-                    <input type="text" name="name" placeholder="Nom">
+
+    <div class="body">
+        @include('component/sidebar')
+        
+        <form action="{{ route('admin.createUsers') }}" method="post">
+            @csrf
+                <div class="create-users">
+                    <div class="name-users">
+                        <label for="name">Nom</label>
+                        <input type="text" name="name" placeholder="Nom">
+                    </div>
+                    <div class="email-users">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="email">
+                    </div>
+                    <div class="password-users">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+                    <div class="role-users">
+                        <label for="role">role</label>
+                        <input type="text" name="isadmin" placeholder="role">
+                    </div>
+                    <div class="btn-submit">
+                        <button type="submit">Enregistrer</button>
+                    </div>
                 </div>
-                <div class="email-users">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="email">
-                </div>
-                <div class="password-users">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" placeholder="password">
-                </div>
-                <div class="role-users">
-                    <label for="role">role</label>
-                    <input type="text" name="isadmin" placeholder="role">
-                </div>
-                <div class="btn-submit">
-                    <button type="submit">Enregistrer</button>
-                </div>
-            </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>

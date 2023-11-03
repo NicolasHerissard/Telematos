@@ -13,12 +13,23 @@ class RegisterController extends Controller
         return view('register');
     }
 
+    private function filter_entry($entry)
+    {
+        if($entry != "")
+        {
+            $entry = htmlentities($entry);
+            return $entry;
+        }
+    }
+
     // crée un utilisateur
     public function registerUser(Request $request)
     {
-        $name = $request->input('name');
-        $email = $request->input('email');
+        $name = $this->filter_entry($request->input('name'));
+        $email = $this->filter_entry($request->input('email'));
         $password = Hash::make($request->input('password'));
+
+        //$request->validate($request->all());
 
         if($name != "" && $email != "" && $password != "")
         {
@@ -33,4 +44,6 @@ class RegisterController extends Controller
 
         return redirect()->route('register')->with('error', 'Vous n\'avez pas renseigné les informations nécessaires');
     }
+
+    
 }

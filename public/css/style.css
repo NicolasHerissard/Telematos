@@ -262,3 +262,31 @@ td {
 .btn-products{
     margin-left: 20px;
 }
+
+/* page admin utilisateurs */
+
+.body {
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.nav {
+    border: 1px solid;
+    height: auto;
+    width: 200px;
+}
+
+.btn {
+    margin-bottom: 30px;
+}
+
+.btn > form > button {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+
+.btn > button:hover {
+    background-color: rgb(228, 41, 41);
+}
