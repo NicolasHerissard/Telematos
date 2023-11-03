@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo_navecran64x64.png">
     <title>Créer produits</title>
 </head>
 <body>
