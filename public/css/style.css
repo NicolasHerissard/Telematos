@@ -290,3 +290,12 @@ td {
 .btn > button:hover {
     background-color: rgb(228, 41, 41);
 }
+
+.tableau{
+    display: flex;
+    justify-content: center;
+}
+
+.tableauValeur tr:nth-child(even){
+    background: #ADAFC4;
+}

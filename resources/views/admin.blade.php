@@ -17,8 +17,8 @@
         @include('component/sidebar')
 
         <div class="container">
-            <div class="list-users">
-                <table>
+            <div class="tableau">
+                <table class="tableauValeur">
                     <thead>
                         <tr>
                             <td>Nom</td>

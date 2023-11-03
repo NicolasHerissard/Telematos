@@ -16,30 +16,31 @@
             {{ Session::get('error') }}
         </div>
     @endif
-        {{-- Tache en cours par Sofyane (en cours de Design) --}}
-    <table>
-        <thead>
-            <tr>
-                <td>Produit</td>
-                <td>Stock disponible</td>
-                <td>Quantité</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($products as $item)
-                <form action="{{ route('productUser.store') }}" method="POST">
-                @csrf
-                    <tr>
-                        <td>{{ $item->name_product }} <input name="product_id" value="{{ $item->id }}" hidden></td>
-                        <td>{{ $item->stock }}</td>
-                        <td><input type="number" id="number_product" name="take_product"></td>
-                        <td><button type="submit" id="btn_product">Choisir</button></td>
-                    </tr>
-                </form>
-            @endforeach
-        </tbody>
-    </table>
-
+    <div class="tableau">
+        <table class="tableauValeur">
+            <thead>
+                <tr>
+                    <td>Produit</td>
+                    <td>Stock disponible</td>
+                    <td>Quantité</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $item)
+                    <form action="{{ route('productUser.store') }}" method="POST">
+                    @csrf
+                        <tr>
+                            <td>{{ $item->name_product }} <input name="product_id" value="{{ $item->id }}" hidden></td>
+                            <td>{{ $item->stock }}</td>
+                            <td><input type="number" id="number_product" name="take_product"></td>
+                            <td><button type="submit" id="btn_product">Choisir</button></td>
+                        </tr>
+                    </form>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    
 
 <!--
 <footer>
