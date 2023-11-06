@@ -1,3 +1,4 @@
+<link href="/css/reset.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 
 <nav class="nav">
