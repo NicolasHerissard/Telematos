@@ -16,17 +16,11 @@
     @include('component/sidebar')
         <div class="products">
             <div class="list-products">
-                @if (Session::has('success'))
-                <div class="success">
-                    {{ Session::get('success') }}
-                </div>
-                @endif
                 @if (Session::has('error'))
                     <div class="error">
                         {{ Session::get('error') }}
                     </div>
                 @endif
-
                 <div class="tableau">
                     <table class="tableauValeur">
                         <thead>
@@ -59,6 +53,11 @@
                         </tbody>
                     </table>
                 </div>
+                @if (Session::has('success'))
+                <div class="success">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
             </div>
         </div>
     </div>
