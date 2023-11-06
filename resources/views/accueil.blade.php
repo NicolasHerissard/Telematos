@@ -12,11 +12,7 @@
     
     @include('component/header')
 
-    @if (Session::has('error'))
-        <div class="error">
-            {{ Session::get('error') }}
-        </div>
-    @endif
+    
     <div class="tableau">
         <table class="tableauValeur">
             <thead>
@@ -34,14 +30,18 @@
                             <td>{{ $item->name_product }} <input name="product_id" value="{{ $item->id }}" hidden></td>
                             <td>{{ $item->stock }}</td>
                             <td><input type="number" id="number_product" name="take_product"></td>
-                            <td><button type="submit" id="btn_product">Choisir</button></td>
+                            <td><button type="submit" id="btn_product" class="bp">Choisir</button></td>
                         </tr>
                     </form>
                 @endforeach
             </tbody>
         </table>
     </div>
-    
+    @if (Session::has('error'))
+        <div class="error">
+            {{ Session::get('error') }}
+        </div>
+    @endif
 
 <!--
 <footer>
