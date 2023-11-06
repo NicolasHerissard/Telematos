@@ -282,3 +282,12 @@ td {
 .tableauValeur tr:nth-child(even) {
     background: #ADAFC4;
 }
+
+.create-all {
+    font-size: 1.6em;
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

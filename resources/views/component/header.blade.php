@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="/css/reset.css" >
-<link rel="stylesheet" href="/css/style.css">
 <header>
     <div class="nav-left">
-        <a class="img-logo" href="/"><img id="logo" src="PC_Mac.png" alt="Logo" width="170px" height="100px"></a>
+        <a class="img-logo" href="/"><img id="logo" src="/../PC_Mac.png" alt="Logo" width="170px" height="100px"></a>
     </div>
     <div class="nav-right">
         <nav class="navMenu">
