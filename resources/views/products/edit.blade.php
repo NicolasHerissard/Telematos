@@ -12,24 +12,21 @@
 <body>
     
     @include('component/header')
-    
-    <form action="{{ route('admin.products.update', [$product->id]) }}" method="post">
-        @csrf
-        @method('PUT')
-        <div class="update-products">
-            <div class="name_product-products">
-                <label for="name_product">Nom du produit</label>
-                <input type="text" name="name_product" value="{{ $product->name_product }}" placeholder="Nom du produit">
-            </div>
-            <div class="stock-products">
-                <label for="stock">Stock</label>
-                <input type="text" name="stock" value="{{ $product->stock }}" placeholder="stock">
-            </div>
-            <div class="btn-submit">
-                <button type="submit">Enregistrer</button>
+    <div class="body">
+        @include('component/sidebar')
+        <div class="create-all">
+            <div class="form-inscr-conn">
+                <form action="{{ route('admin.products.update', [$product->id]) }}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <label for="name_product">Nom du produit</label>
+                    <input type="text" name="name_product" value="{{ $product->name_product }}" placeholder="Nom du produit">
+                    <label for="stock">Stock</label>
+                    <input type="text" name="stock" value="{{ $product->stock }}" placeholder="stock">
+                    <button type="submit">Enregistrer</button>
+                </form>
             </div>
         </div>
-    </form>
-
+    </div>
 </body>
 </html>

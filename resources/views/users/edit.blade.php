@@ -13,30 +13,25 @@
     
     @include('component/header')
     
-    <form action="{{ route('admin.users.update', $user->id) }}" method="post">
-        @csrf
-        @method('PUT')
-            <div class="update-users">
-                <div class="name-users">
+    <div class="body">
+        @include('component/sidebar')
+        <div class="create-all">
+            <div class="form-inscr-conn">
+                <form action="{{ route('admin.users.update', $user->id) }}" method="post">
+                    @csrf
+                    @method('PUT')
                     <label for="name">Nom</label>
                     <input type="text" name="name" value="{{ $user->name }}" placeholder="Nom">
-                </div>
-                <div class="email-users">
                     <label for="email">Email</label>
                     <input type="email" name="email" value="{{ $user->email }}" placeholder="email">
-                </div>
-                <div class="password-users">
                     <label for="password">Mot de passe</label>
                     <input type="password" name="password" value="{{ $user->password }}" placeholder="password">
-                </div>
-                <div class="role-users">
                     <label for="role">role</label>
                     <input type="text" name="isadmin" value="{{ $user->isadmin }}" placeholder="role">
-                </div>
-                <div class="btn-submit">
                     <button type="submit">Modifié</button>
-                </div>
+                </form>
             </div>
-    </form>
+        </div>
+    </div>
 </body>
 </html>
