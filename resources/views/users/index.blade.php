@@ -17,17 +17,11 @@
     @include('component/sidebar')
         <div class="users">
             <div class="list-users">
-                @if (Session::has('success'))
-                    <div class="success">
-                        {{ Session::get('success') }}
-                    </div>
-                @endif
                 @if (Session::has('error'))
                     <div class="error">
                         {{ Session::get('error') }}
                     </div>
                 @endif
-
                 <a href="{{ route('admin.users.create') }}">Créer un utilisateur</a>
                 <div class="tableau">
                     <table class="tableauValeur">
@@ -67,8 +61,12 @@
                         </tbody>
                     </table>
                 </div>
-                
             </div>
+            @if (Session::has('success'))
+                <div class="success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
         </div>
     </div>
     
