@@ -184,7 +184,6 @@ td {
 }
 
 .products {
-    padding: 30px 50px;
     height: auto;
     width: auto;
     display: flex;
@@ -273,6 +272,9 @@ td {
 .tableau {
     display: flex;
     justify-content: center;
+    height: 82vh;
+    overflow-y: auto;
+    overflow-x: scroll;
 }
 
 .tableauValeur {
