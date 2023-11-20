@@ -46,4 +46,4 @@ L'application de distribution de matériel pour le télétravail est une solutio
 - [Profile Dominik](https://github.com/Lakpoo)
 - [Profile Sofyane](https://github.com/Sofyane0603)
 
-© TELEMATOS - [Site Web](https://telematos.tech)
+© TELEMATOS - [Site Web](https://www.telematos.tech/)
