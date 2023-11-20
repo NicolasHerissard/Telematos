@@ -15,6 +15,11 @@
 
     
     <div class="tableau">
+        @if (Session::has('error'))
+            <div class="error">
+                {{ Session::get('error') }}
+            </div>
+        @endif
         <table class="tableauValeur">
             <thead>
                 <tr>
@@ -38,11 +43,6 @@
             </tbody>
         </table>
     </div>
-    @if (Session::has('error'))
-        <div class="error">
-            {{ Session::get('error') }}
-        </div>
-    @endif
 
 <!--
 <footer>
