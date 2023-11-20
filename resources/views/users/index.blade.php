@@ -14,59 +14,58 @@
     @include('component/header')
     
     <div class="body">
-    @include('component/sidebar')
-        <div class="users">
-            <div class="list-users">
+
+        @include('component/sidebar')
+        
+        <div class="container">
                 @if (Session::has('error'))
                     <div class="error">
                         {{ Session::get('error') }}
                     </div>
                 @endif
-                <a href="{{ route('admin.users.create') }}">Créer un utilisateur</a>
-                <div class="tableau">
-                    <table class="tableauValeur">
-                        <thead>
-                            <tr>
-                                <td>Nom</td>
-                                <td>Email</td>
-                                <td>Role</td>
-                                <td>Action</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $item)
-                                @if ($item->isadmin == '1')
-                                    <input type="hidden" value="{{$item->isadmin = 'Admin'}}">
-                                @else
-                                    <input type="hidden" value="{{$item->isadmin = 'Utilisateur'}}">
-                                @endif
-                                    <tr>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->isadmin }}</td>
-                                        <td>
-                                            <div class="btn-action">
-                                                <form action="{{ route('admin.users.delete', $item->id) }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button id="btn-delete">Supprimer</button>
-                                                </form>
-                                                <form action="{{ route('admin.users.edit', $item->id) }}" method="get">
-                                                    <button id="btn-edit">Modifier</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            @if (Session::has('success'))
+                @if (Session::has('success'))
                 <div class="success">
                     {{ Session::get('success') }}
                 </div>
             @endif
+            <div class="tableau">
+                <table class="tableauValeur">
+                    <thead>
+                        <tr>
+                            <td>Nom</td>
+                            <td>Email</td>
+                            <td>Role</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $item)
+                            @if ($item->isadmin == '1')
+                                <input type="hidden" value="{{$item->isadmin = 'Admin'}}">
+                            @else
+                                <input type="hidden" value="{{$item->isadmin = 'Utilisateur'}}">
+                            @endif
+                                <tr>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->isadmin }}</td>
+                                    <td>
+                                        <div class="btn-action">
+                                            <form action="{{ route('admin.users.delete', $item->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button id="btn-delete">Supprimer</button>
+                                            </form>
+                                            <form action="{{ route('admin.users.edit', $item->id) }}" method="get">
+                                                <button id="btn-edit">Modifier</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     

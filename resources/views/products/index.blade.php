@@ -21,6 +21,11 @@
                         {{ Session::get('error') }}
                     </div>
                 @endif
+                @if (Session::has('success'))
+                <div class="success">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
                 <div class="tableau">
                     <table class="tableauValeur">
                         <thead>
@@ -53,11 +58,6 @@
                         </tbody>
                     </table>
                 </div>
-                @if (Session::has('success'))
-                <div class="success">
-                    {{ Session::get('success') }}
-                </div>
-                @endif
             </div>
         </div>
     </div>

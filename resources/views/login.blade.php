@@ -14,6 +14,11 @@
     @include('component/header')
 
     <div class="main">
+            @if (Session::has('error'))
+                <div class="error">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
         <div class="form-inscr-conn">
             <h1>Connexion</h1>
             <form action="{{ route('loginUser') }}" method="get">
@@ -21,11 +26,6 @@
                 <input type="password" placeholder="Password" name="password">
                 <button>Connexion</button>
             </form>
-            @if (Session::has('error'))
-                <div class="error">
-                    {{ Session::get('error') }}
-                </div>
-            @endif
         </div>
     </div>
 <!--

@@ -121,8 +121,8 @@ header {
 }
 
 .form-inscr-conn>form>input {
-    width: 400px;
-    height: 40px;
+    width: 26vw;
+    height: 4vh;
     border: none;
     border-bottom: 2px solid #33396c;
 }
