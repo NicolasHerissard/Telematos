@@ -14,6 +14,7 @@ header {
     margin-bottom: 70px;
 }
 
+<<<<<<< HEAD
 .navResponsive {
     display: inline-flex;
     width: 50%;
@@ -46,6 +47,34 @@ header {
     width: 70%;
 }
 
+=======
+.mon-materiel {
+    margin-right: 50px;
+}
+
+.home {
+    margin-right: 20px;
+}
+
+.navMenu a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 160px;
+}
+
+.navMenu a:hover {
+    color: #33396c;
+}
+
+.nav-right {
+    width: 35%;
+}
+
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 .nav-left {
     width: 50%;
 }
@@ -77,7 +106,10 @@ header {
 }
 
 .bp-general {
+<<<<<<< HEAD
     margin-right: 20vh;
+=======
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     width: 23%;
     display: flex;
 }
@@ -279,8 +311,14 @@ td {
 .tableau {
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     overflow-y: auto;
     overflow-x: auto;
+=======
+    height: 82vh;
+    overflow-y: auto;
+    overflow-x: scroll;
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 }
 
 .tableauValeur {
@@ -305,6 +343,7 @@ td {
     margin: 10px;
     font-family: "Montserrat", sans-serif;
     font-size: 1.0em;
+<<<<<<< HEAD
 }
 
 .derouler {
@@ -400,4 +439,6 @@ td {
     #btn_product {
         width: 200px;
     }
+=======
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 }

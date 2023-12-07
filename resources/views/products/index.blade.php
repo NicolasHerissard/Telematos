@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta http-equiv="X-UA-Compatible" content="ie=edge">   
+=======
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     <link rel="stylesheet" href="/css/reset.css" >
     <link rel="stylesheet" href="/css/style.css" >
     <link rel="icon" type="image/png" href="/../logo_navecran64x64.png">
@@ -12,6 +16,7 @@
 <body>
 
     @include('component/header')
+<<<<<<< HEAD
 
     <div class="derouler">
         <div class="nav-right">
@@ -26,7 +31,58 @@
 
                 @endif
             </nav>
+=======
+    <div class="body">
+    @include('component/sidebar')
+        <div class="products">
+            <div class="list-products">
+                @if (Session::has('error'))
+                    <div class="error">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
+                @if (Session::has('success'))
+                <div class="success">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
+                <div class="tableau">
+                    <table class="tableauValeur">
+                        <thead>
+                            <tr>
+                                <td>Nom du produit</td>
+                                <td>Stock restant</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($products as $item)
+                                <tr>
+                                    <td>{{ $item->name_product }}</td>
+                                    <td>{{ $item->stock }}</td>
+                                    <td>
+                                        <div class="btn-action">
+                                            <form action="{{ route('admin.products.delete', [$item->id]) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button id="btn-delete">Supprimer</button>
+                                            </form>
+                                            <form action="{{ route('admin.products.edit', [$item->id]) }}" method="get">
+                                                @csrf
+                                                <button id="btn-edit">Modifier</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
         </div>
+    </div>
+    
         
         @if (!Auth::check())
             <div class="bp-general">

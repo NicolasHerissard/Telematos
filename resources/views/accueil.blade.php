@@ -13,6 +13,7 @@
     
     @include('component/header')
 
+<<<<<<< HEAD
     <div class="derouler">
         <div class="nav-right">
             <nav class="navMenu">
@@ -43,6 +44,8 @@
             </div>
         @endif
     </div>
+=======
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     
     <div class="tableau">
         @if (Session::has('error'))
@@ -73,6 +76,7 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
 
     <div class="display-telephone">
         @if (Session::has('error'))
@@ -107,6 +111,8 @@
         </div>
         @endforeach
     </div>
+=======
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 
 <!--
 <footer>

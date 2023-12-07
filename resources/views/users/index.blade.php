@@ -12,6 +12,7 @@
 <body>
     
     @include('component/header')
+<<<<<<< HEAD
 
     <div class="derouler">
         <div class="nav-right">
@@ -46,6 +47,11 @@
     
     <div class="body">
 
+=======
+    
+    <div class="body">
+
+>>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
         @include('component/sidebar')
         
         <div class="container">
@@ -99,6 +105,7 @@
             </div>
         </div>
     </div>
+    
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
