@@ -34,7 +34,6 @@
                 <form action="/logout"><button class="bp">Se déconnecter</button></form>
             </div>
         @endif
-
         </nav>
     </div>
     

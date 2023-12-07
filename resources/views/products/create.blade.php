@@ -44,7 +44,6 @@
     </div>
     
     <div class="body">
-
         @include('component/sidebar')
         <div class="create-all">
             <div class="form-inscr-conn">
