@@ -16,20 +16,18 @@
     <div class="main">
         <div class="form-inscr-conn">
             <h1>Inscription</h1>
-
+            <form action="{{ route('registerUser') }}" method="post">
+            @csrf
+                <input type="text" placeholder="Nom" name="name" required >
+                <input type="email" placeholder="Email" name="email" required >
+                <input type="password" name="password" placeholder="Mot de Passe" required >
+                <button type="submit">Enregistrer</button>
+            </form>
             @if (Session::has('error'))
                 <div class="error">
                     {{ Session::get('error') }}
                 </div>
             @endif
-
-            <form action="{{ route('registerUser') }}" method="post">
-            @csrf
-                <input type="text" placeholder="Nom" name="name">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" name="password" placeholder="Mot de Passe">
-                <button type="submit">Enregistrer</button>
-            </form>
         </div>
         
     </div>
@@ -43,5 +41,26 @@
         </script>
 </footer>
 //-->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var burgerLink = document.getElementById("burger");
+    var deroulerDiv = document.querySelector(".derouler");
+
+    burgerLink.addEventListener("click", function(event) {
+      event.preventDefault(); 
+
+      // alterner entre afficher et cacher la div
+      if (deroulerDiv.style.display === "none" || deroulerDiv.style.display === "") {
+        deroulerDiv.style.display = "grid";
+        //css de la div quand on l'affiche
+        deroulerDiv.style.backgroundColor = "#ccc"; 
+        deroulerDiv.style.justifyContent = "center";
+        deroulerDiv.style.padding = "10px"; 
+      } else {
+        deroulerDiv.style.display = "none";
+      }
+    });
+  });
+</script>
 </body>
 </html>
