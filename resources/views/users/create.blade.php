@@ -13,7 +13,6 @@
     
     @include('component/header')
 
-<<<<<<< HEAD
     <div class="derouler">
         <div class="nav-right">
             <nav class="navMenu">
@@ -43,31 +42,9 @@
                 <form action="/logout"><button class="bp">Se déconnecter</button></form>
             </div>
         @endif
-=======
-    <div class="body">
-
-        @include('component/sidebar')
-        <div class="create-all">
-            <div class="form-inscr-conn">
-                <form class="form-crea-compte" action="{{ route('admin.createUsers') }}" method="post">
-                    @csrf
-                    <label for="name">Nom</label>
-                    <input type="text" name="name" placeholder="Nom">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="Email">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" placeholder="Mot de passe">
-                    <label for="role">Role</label>
-                    <input type="text" name="isadmin" placeholder="Role">
-                    <button type="submit">Enregistrer</button>
-                </form>
-            </div>
-        </div>
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     </div>
 
     <div class="body">
-
         @include('component/sidebar')
         <div class="create-all">
             <div class="form-inscr-conn">

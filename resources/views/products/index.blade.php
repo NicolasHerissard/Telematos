@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <meta http-equiv="X-UA-Compatible" content="ie=edge">   
-=======
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     <link rel="stylesheet" href="/css/reset.css" >
     <link rel="stylesheet" href="/css/style.css" >
     <link rel="icon" type="image/png" href="/../logo_navecran64x64.png">
@@ -16,7 +13,6 @@
 <body>
 
     @include('component/header')
-<<<<<<< HEAD
 
     <div class="derouler">
         <div class="nav-right">
@@ -31,7 +27,6 @@
 
                 @endif
             </nav>
-=======
     <div class="body">
     @include('component/sidebar')
         <div class="products">
@@ -79,7 +74,6 @@
                     </table>
                 </div>
             </div>
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
         </div>
     </div>
     

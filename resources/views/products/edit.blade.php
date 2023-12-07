@@ -12,7 +12,6 @@
 <body>
     
     @include('component/header')
-<<<<<<< HEAD
 
     <div class="derouler">
         <div class="nav-right">
@@ -45,8 +44,6 @@
         @endif
     </div>
 
-=======
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     <div class="body">
         @include('component/sidebar')
         <div class="create-all">
@@ -63,7 +60,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     var burgerLink = document.getElementById("burger");
@@ -85,7 +81,5 @@
     });
   });
 </script>
-=======
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 </body>
 </html>

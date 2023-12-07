@@ -12,7 +12,6 @@
 <body>
     
     @include('component/header')
-<<<<<<< HEAD
 
     <div class="derouler">
         <div class="nav-right">
@@ -86,7 +85,6 @@
     });
   });
 </script>
-=======
     
     <div class="body">
         @include('component/sidebar')
@@ -108,6 +106,5 @@
             </div>
         </div>
     </div>
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
 </body>
 </html>

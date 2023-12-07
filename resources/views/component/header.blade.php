@@ -17,7 +17,6 @@
                     @endif
 
                 @endif
-<<<<<<< HEAD
             </nav>
         </div>
         
@@ -35,11 +34,8 @@
                 <form action="/logout"><button class="bp">Se déconnecter</button></form>
             </div>
         @endif
-=======
 
-            @endif
         </nav>
->>>>>>> 4de54f8fce996b5e971f543204cea428c52fc0ea
     </div>
     
 </header>
