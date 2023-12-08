@@ -92,6 +92,51 @@
                 </div>
             </div>
         </div>
+        <div class="display-telephone">
+            @if (Session::has('error'))
+            <div class="error">
+                {{ Session::get('error') }}
+            </div>
+            @endif
+            @if (Session::has('success'))
+            <div class="success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
+
+            @foreach ($products as $item)
+            <table class="card-display-telephone">
+                <tbody>
+                <tr>
+                    <td class="card-header-product">
+                        <div class="card-name-product">Nom du produit : {{ $item->name_product }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="card-header-product">
+                        <div class="card-stock-product">Stock : {{ $item->stock }}</div>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="card-footer-product">
+                            <form action="{{ route('admin.products.delete', [$item->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button id="btn-delete">Supprimer</button>
+                            </form>
+                            <!-- Nouvelle cellule pour aligner les boutons côte à côte -->
+                            <td class="card-footer-product">
+                                <form action="{{ route('admin.products.edit', [$item->id]) }}" method="get">
+                                    @csrf
+                                    <button id="btn-edit">Modifier</button>
+                                </form>
+                            </td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @endforeach
+        </div>
     </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {

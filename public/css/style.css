@@ -336,10 +336,6 @@ td {
     width: 130px;
 }
 
-.card-display-telephone {
-    margin: 5px;
-}
-
 @media only screen and (max-width: 600px) {
     .body {
         flex-direction: column;
@@ -400,4 +396,24 @@ td {
     #btn_product {
         width: 200px;
     }
+
+    .products {
+        display: none;
+    }
+}
+
+.card-display-telephone {
+    margin: 5px;
+}
+
+.card-header-product {
+    white-space: nowrap;
+}
+
+.card-footer-product,
+.card-footer-product td,
+.card-name-product,
+.card-stock-product {
+    display: inline-block;
+    margin: 5px;
 }
