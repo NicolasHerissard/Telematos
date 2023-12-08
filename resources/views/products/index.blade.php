@@ -122,13 +122,13 @@
                             <form action="{{ route('admin.products.delete', [$item->id]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button id="btn-delete">Supprimer</button>
+                                <button class="bp" id="btn-delete">Supprimer</button>
                             </form>
                             <!-- Nouvelle cellule pour aligner les boutons côte à côte -->
                             <td class="card-footer-product">
                                 <form action="{{ route('admin.products.edit', [$item->id]) }}" method="get">
                                     @csrf
-                                    <button id="btn-edit">Modifier</button>
+                                    <button class="bp" id="btn-edit">Modifier</button>
                                 </form>
                             </td>
                         </td>
@@ -150,7 +150,7 @@
       if (deroulerDiv.style.display === "none" || deroulerDiv.style.display === "") {
         deroulerDiv.style.display = "grid";
         //css de la div quand on l'affiche
-        deroulerDiv.style.backgroundColor = "#ccc"; 
+        deroulerDiv.style.backgroundColor = "rgb(234 234 234)"; 
         deroulerDiv.style.justifyContent = "center";
         deroulerDiv.style.padding = "10px"; 
       } else {

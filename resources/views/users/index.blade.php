@@ -100,6 +100,42 @@
                     </tbody>
                 </table>
             </div>
+            <div class="display-telephone">
+                @foreach ($users as $item)
+                    @if ($item->isadmin == '1')
+                        <input type="hidden" value="{{$item->isadmin = 'Admin'}}">
+                    @else
+                        <input type="hidden" value="{{$item->isadmin = 'Utilisateur'}}">
+                    @endif
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{ $item->isadmin }}</th>
+                                <th>{{ $item->name }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">{{ $item->email }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form action="{{ route('admin.users.delete', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button id="btn-delete">Supprimer</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('admin.users.edit', $item->id) }}" method="get">
+                                        <button id="btn-edit">Modifier</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                @endforeach
+            </div>
         </div>
     </div>
     
@@ -116,7 +152,7 @@
       if (deroulerDiv.style.display === "none" || deroulerDiv.style.display === "") {
         deroulerDiv.style.display = "grid";
         //css de la div quand on l'affiche
-        deroulerDiv.style.backgroundColor = "#ccc"; 
+        deroulerDiv.style.backgroundColor = "rgb(234 234 234)"; 
         deroulerDiv.style.justifyContent = "center";
         deroulerDiv.style.padding = "10px"; 
       } else {
