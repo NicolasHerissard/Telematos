@@ -67,7 +67,7 @@
       if (deroulerDiv.style.display === "none" || deroulerDiv.style.display === "") {
         deroulerDiv.style.display = "grid";
         //css de la div quand on l'affiche
-        deroulerDiv.style.backgroundColor = "#ccc"; 
+        deroulerDiv.style.backgroundColor = "rgb(234 234 234)"; 
         deroulerDiv.style.justifyContent = "center";
         deroulerDiv.style.padding = "10px"; 
       } else {

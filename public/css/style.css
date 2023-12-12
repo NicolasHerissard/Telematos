@@ -387,7 +387,7 @@ td {
     }
 
     .form-inscr-conn>form>input {
-        width: 55vw;
+        width: 70vw;
         height: 5vh;
     }
 
@@ -408,6 +408,10 @@ td {
 
     .products {
         display: none;
+    }
+
+    .create-all {
+        width: 100%;
     }
 }
 
