@@ -62,8 +62,6 @@ class ProductController extends Controller
                     'stock' => $stock
                 ]);
 
-                $this->imageToBase64($file);
-
                 return redirect()->route('admin.products')->with('success', 'Produit créé avec succès');
             }
 

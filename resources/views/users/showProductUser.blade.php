@@ -44,17 +44,38 @@
         @endif
     </div>
 
-    <div>
-        @foreach ($var as $item)
-            <div class="name_product">
-                {{ $item->name_product }}
+    <div class="tableau">
+        @if (Session::has('error'))
+            <div class="error">
+                {{ Session::get('error') }}
             </div>
-            {{-- <div class="quantity">
-                {{ $item->pivot }}
-            </div> --}}
-            {{-- {{ $take_product }} --}}
-        @endforeach
+        @endif
+        <table class="tableauValeur">
+            <thead>
+                <tr>
+                    <td>Produit</td>
+                    <td>Quantité</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($var as $item)
+                    <tr>
+                        <td>{{ $item->name_product }}</td>
+                        <td></td>
+                        <td>
+                            <form action={{ route('productUser.delete', $item->id) }} method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button id="btn_product" class="bp" type="submit">Rendre</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     var burgerLink = document.getElementById("burger");

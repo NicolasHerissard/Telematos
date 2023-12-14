@@ -11,14 +11,31 @@
 </head>
 <body>
     
-    
-    @foreach ($productUser as $item)
 
-        <div>
-            {{ $item->user_id }}
-            {{ $item->product_id }}
-        </div>
-    @endforeach
+    <div class="tableau">
+        @if (Session::has('error'))
+            <div class="error">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+        <table class="tableauValeur">
+            <thead>
+                <tr>
+                    <td>Produit</td>
+                    <td>Stock disponible</td>
+                    <td>Quantité</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($productUser as $item)
+                    <tr>
+                        <td>{{ $item->user_id }} <input name="product_id" value="{{ $item->id }}" hidden></td>
+                        <td>{{ $item->product_id }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
