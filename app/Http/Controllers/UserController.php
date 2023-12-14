@@ -61,10 +61,10 @@ class UserController extends Controller
                     'isadmin' => $isadmin
                 ]);
 
-                return redirect()->route('admin.users')->with('success', 'Utilisateur créer avec succès');
+                return redirect()->route('admin.users')->with('success', 'Utilisateur créé avec succès');
             }
 
-            return redirect()->route('admin.users.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
+            return redirect()->route('admin.users.create')->with('error', 'Vous n\'avez pas spécifié toutes les informations');
         }
 
         return redirect()->route('home');
@@ -99,7 +99,7 @@ class UserController extends Controller
 
             $user->save();
 
-            return redirect()->route('admin.users')->with('success', 'Utilisateur modifier');
+            return redirect()->route('admin.users')->with('success', 'Utilisateur modifié');
         }
         
         return redirect()->route('home');
@@ -117,7 +117,7 @@ class UserController extends Controller
                 $user = User::find($id);
                 $user->delete();
 
-                return redirect()->route('admin.users')->with('success', 'Utilisateur supprimer');
+                return redirect()->route('admin.users')->with('success', 'Utilisateur supprimé');
             }
 
             return redirect()->route('admin.users')->with('error', 'Vous ne pouvez pas supprimer votre propre utilisateur');

@@ -64,7 +64,7 @@ class ProductController extends Controller
 
                 $this->imageToBase64($file);
 
-                return redirect()->route('admin.products')->with('success', 'Produit créer avec succès');
+                return redirect()->route('admin.products')->with('success', 'Produit créé avec succès');
             }
 
             return redirect()->route('admin.products.create')->with('error', 'Vous n\'avez pas spécifier toutes les informations');
@@ -101,7 +101,7 @@ class ProductController extends Controller
 
             $product->save();
 
-            return redirect()->route('admin.products')->with('success', 'Produit modifier');
+            return redirect()->route('admin.products')->with('success', 'Produit modifié');
         }
 
         return redirect()->route('home');
@@ -117,7 +117,7 @@ class ProductController extends Controller
 
             $product->delete();
 
-            return redirect()->route('admin.products')->with('success', 'Produit Supprimer');
+            return redirect()->route('admin.products')->with('success', 'Produit Supprimé');
         }
 
         return redirect()->route('home');
