@@ -40,7 +40,7 @@ class ProductUserController extends Controller
         $take_product = $request->input('take_product');
 
         if($take_product == null)
-            return redirect()->back()->with('error', 'Vous n\'avez pas spécifier la quantité');
+            return redirect()->back()->with('error', 'Vous n\'avez pas spécifié la quantité');
 
         ProductUser::create([
             'user_id' => $user_id,
