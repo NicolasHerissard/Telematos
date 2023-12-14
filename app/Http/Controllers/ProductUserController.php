@@ -48,18 +48,26 @@ class ProductUserController extends Controller
             'take_product' => $take_product
         ]);
 
+        $id = Product::find($product_id);
+
+        $this->update_stock($take_product, $product_id, $id->stock);
+
         return redirect()->route('home');
     }
 
-    public function update_stock(Request $request, $id)
+    public function update_stock($take_product, $id, $stock)
     {
-        $pr = Product::find($id);
-        $pr->stock = $request->only('stock');
-        $pr->stock = $pr->stock - $request->input('stock');
+        if($take_product > $stock)
+        {
+            return redirect()->route('home')->with('error', "Quantité demandé trop élevée");
+        }
+        else 
+        {
+            $pr = Product::find($id);
+            $pr->stock = $stock - $take_product;
 
-        $pr->save();
-
-        return redirect()->route('home');
+            $pr->save();
+        }
     }
 
     public function edit($id)

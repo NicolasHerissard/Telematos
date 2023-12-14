@@ -53,6 +53,7 @@ class ProductController extends Controller
         {
             $name_product = $request->input('name_product');
             $stock = $request->input('stock');
+            $file = $request->file('file');
 
             if($name_product != "" && $stock != "")
             {
@@ -60,6 +61,8 @@ class ProductController extends Controller
                     'name_product' => $name_product,
                     'stock' => $stock
                 ]);
+
+                $this->imageToBase64($file);
 
                 return redirect()->route('admin.products')->with('success', 'Produit créer avec succès');
             }
@@ -118,5 +121,17 @@ class ProductController extends Controller
         }
 
         return redirect()->route('home');
+    }
+
+    public function imageToBase64($file)
+    {
+        $image = base64_encode(file_get_contents($file));
+
+        echo $image;
+    }
+
+    public function base64ToImage()
+    {
+
     }
 }
