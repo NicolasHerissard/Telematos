@@ -64,7 +64,7 @@
                         <td>{{ $item->name_product }}</td>
                         <td></td>
                         <td>
-                            <form action={{ route('productUser.delete', $item->id) }} method="post">
+                            <form action="{{ route('productUser.delete', $item->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button id="btn_product" class="bp" type="submit">Rendre</button>
@@ -76,6 +76,38 @@
         </table>
     </div>
 
+    <div class="display-telephone">
+        @if (Session::has('error'))
+            <div class="error">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+        @foreach ($var as $item)
+        <div class="card-display-telephone">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="right-part-display-telephone">
+                                <div class="subpart-display-telephone">{{ $item->name_product }}</div>
+                                <div class="subpart-display-telephone">quantité ici</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <form action="{{ route('productUser.delete', $item->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button id="btn_product" class="bp" type="submit">Rendre</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div>
+        @endforeach
+    </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     var burgerLink = document.getElementById("burger");

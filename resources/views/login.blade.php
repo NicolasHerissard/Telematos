@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="logo_navecran64x64.png">
     <title>Connexion</title>
+    <meta name="description" content="Outils de gestion d'emprunt, matériel télétravail.">
+    <meta name="keywords" content="Teletravail, Outils profesionnel">
+    <meta name="author" content="Dominik KILIAN, Nicolas Herissard, Sofyane RAYE">
 </head>
 <body>
     
