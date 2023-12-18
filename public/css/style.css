@@ -129,6 +129,7 @@ header {
 }
 
 .form-inscr-conn>form>input {
+    background-color: #e0e0e0;
     width: 26vw;
     height: 4vh;
     border: none;
@@ -357,6 +358,10 @@ td {
 
     .nav {
         width: auto;
+    }
+
+    .bp-general {
+        margin-right: 0;
     }
 
     table {
