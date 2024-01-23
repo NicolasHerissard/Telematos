@@ -1,6 +1,6 @@
 <header>
     <div class="nav-left">
-        <a class="img-logo" href="/"><img id="logo" src="/../PC_Mac.png" alt="Logo" width="170px" height="100px"></a>
+        <a class="img-logo" href="/"><img id="logo" src="/../PC_Mac.webp" alt="Logo" width="170px" height="100px"></a>
     </div>
     <div class="menuBurger">
         <a class="img-menuBurger" id="burger" href=""><img id="menuBurger" src="/../menu-burger.png" alt="Menu Burger" width="40px" height="40px"></a>
