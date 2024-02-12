@@ -52,7 +52,7 @@
                     <label for="name_product">Nom du produit</label>
                     <input type="text" name="name_product" placeholder="Nom du produit">
                     <label for="stock">Stock</label>
-                    <input type="text" name="stock" placeholder="stock">
+                    <input type="text" name="stock" placeholder="stock" pattern="[0-9]*" inputmode="numeric">
                     <button type="submit">Enregistrer</button>
                 </form>
             </div>
