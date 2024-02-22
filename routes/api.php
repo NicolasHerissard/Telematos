@@ -25,4 +25,4 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/myproducts/:id', [ProductUserController::class, 'showProductUser']);
+Route::get('/myproducts/{id}', [ProductUserController::class, 'showProductUser']);

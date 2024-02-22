@@ -12,6 +12,6 @@ class ProductUserController extends Controller
     {
         $product_user = User::find($id)->products;
 
-        return response()->json($product_user);
+        return response()->json($product_user)->setStatusCode(200);
     }
 }

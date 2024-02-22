@@ -10,14 +10,12 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $login = $request->only('name', 'password');
+        $login = $request->only(['name', 'password']);
         if(Auth::attempt($login))
         {
-            return response()->json($login);
+            return response()->json($login)->setStatusCode(200);
         }
-        else 
-        {
-            return response()->json('error');
-        }
+        
+        return response()->json('error')->setStatusCode(404);
     }
 }
