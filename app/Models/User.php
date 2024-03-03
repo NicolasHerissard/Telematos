@@ -57,7 +57,7 @@ class User extends Authenticatable
     // relation utilisateur / produit 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'product_users');
+        return $this->belongsToMany(Product::class, 'product_users', 'user_id', 'product_id')->withPivot("id")->withPivot("take_product");
     }
 
 }

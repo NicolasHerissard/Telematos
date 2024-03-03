@@ -39,11 +39,9 @@ class RegisterController extends Controller
                 'password' => $password,
             ]);
 
-            //return redirect()->route('login');
+            return redirect()->route('login');
         }
 
         return redirect()->route('register')->with('error', 'Vous n\'avez pas renseigné les informations nécessaires');
     }
-
-    
 }

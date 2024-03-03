@@ -62,9 +62,9 @@
                 @foreach ($var as $item)
                     <tr>
                         <td>{{ $item->name_product }}</td>
-                        <td></td>
+                        <td>{{ $item->pivot->take_product }}</td>
                         <td>
-                            <form action="{{ route('productUser.delete', $item->id) }}" method="post">
+                            <form action="{{ route('productUser.delete', $item->pivot->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button id="btn_product" class="bp" type="submit">Rendre</button>
@@ -90,7 +90,7 @@
                         <td>
                             <div class="right-part-display-telephone">
                                 <div class="subpart-display-telephone">{{ $item->name_product }}</div>
-                                <div class="subpart-display-telephone">quantité ici</div>
+                                <div class="subpart-display-telephone">{{ $item->pivot->id }}</div>
                             </div>
                         </td>
                     </tr>
