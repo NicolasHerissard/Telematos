@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\ProductUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Override;
 
 class ProductUserController extends Controller
 {
