@@ -18,4 +18,10 @@ class LoginController extends Controller
         
         return response()->json('error')->setStatusCode(404);
     }
+    public function logout()
+    {
+        auth()->logout();
+
+        return response()->setStatusCode(200);
+    }
 }
