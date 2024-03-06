@@ -53,6 +53,8 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/productUser', [ProductUserController::class, 'showAll'])->name('productUser');
 });
 
+
+
 Route::prefix('/productUser')->name('productUser.')->group(function () {
     Route::get('show/{id}', [ProductUserController::class, 'showProductUser'])->name('show');
     Route::post('/store', [ProductUserController::class, 'store'])->name('store');

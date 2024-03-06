@@ -23,6 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/login', [LoginController::class, 'login']);
 
+Route::post('/logout', [LoginController::class, 'logout']);
+
 Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/myproducts/{id}', [ProductUserController::class, 'showProductUser']);
