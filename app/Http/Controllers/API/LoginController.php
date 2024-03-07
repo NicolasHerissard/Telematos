@@ -22,6 +22,6 @@ class LoginController extends Controller
     {
         auth()->logout();
 
-        return response()->setStatusCode(200);
+        return response()->json("Déconnexion réussie")->setStatusCode(200);
     }
 }
