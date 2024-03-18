@@ -50,4 +50,12 @@ class ProductUserController extends Controller
             $pr->save();
         }
     }
+
+    public function delete($id)
+    {
+        $pr = ProductUser::find($id);
+        $pr->delete();
+
+        return response()->json("supprimé avec succès")->setStatusCode(200);
+    }
 }

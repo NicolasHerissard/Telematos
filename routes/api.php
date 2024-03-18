@@ -30,3 +30,5 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/myproducts/{id}', [ProductUserController::class, 'showProductUser']);
 
 Route::post('/products/store', [ProductUserController::class, 'store']);
+
+Route::delete('/myproducts/delete/{id}', [ProductUserController::class, 'delete']);
