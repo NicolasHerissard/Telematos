@@ -49,12 +49,12 @@ class ProductUserController extends Controller
 
         $id = Product::find($product_id);
 
-        $this->update_stock($take_product, $product_id, $id->stock);
+        $this->update_stock_remove($take_product, $product_id, $id->stock);
 
         return redirect()->route('home');
     }
 
-    public function update_stock($take_product, $id, $stock)
+    public function update_stock_remove($take_product, $id, $stock)
     {
         if($take_product > $stock)
         {
@@ -82,8 +82,21 @@ class ProductUserController extends Controller
     public function delete($id)
     {
         $pr = ProductUser::find($id);
+        $product_id = $pr->product_id;
+        $product = Product::find($product_id);
+
+        $this->update_stock_add($pr->take_product, $product_id, $product->stock);
+
         $pr->delete();
 
         return redirect()->route('home');
+    }
+
+    public function update_stock_add($take_product, $id, $stock)
+    {
+        $pr = Product::find($id);
+        $pr->stock = $stock + $take_product;
+
+        $pr->save();
     }
 }
