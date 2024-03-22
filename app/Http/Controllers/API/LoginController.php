@@ -13,6 +13,11 @@ class LoginController extends Controller
         $login = $request->only(['name', 'password']);
         if(Auth::attempt($login))
         {
+            $user = Auth::user();
+            $id = $user->id;
+
+            $login['id'] = $id;
+
             return response()->json($login)->setStatusCode(200);
         }
         
