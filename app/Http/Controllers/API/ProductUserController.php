@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductUser;
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -54,8 +55,21 @@ class ProductUserController extends Controller
     public function delete($id)
     {
         $pr = ProductUser::find($id);
+        $product_id = $pr->product_id;
+        $product = Product::find($product_id);
+
+        $this->update_stock_add($pr->take_product, $product_id, $product->stock);
+
         $pr->delete();
 
         return response()->json("supprimé avec succès")->setStatusCode(200);
+    }
+
+    public function update_stock_add($take_product, $id, $stock)
+    {
+        $pr = Product::find($id);
+        $pr->stock = $stock + $take_product;
+
+        $pr->save();
     }
 }
