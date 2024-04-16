@@ -90,7 +90,7 @@ CREATE TABLE `product_users` (
   KEY `product_users_product_id_foreign` (`product_id`),
   CONSTRAINT `product_users_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `product_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `product_users` (
 
 LOCK TABLES `product_users` WRITE;
 /*!40000 ALTER TABLE `product_users` DISABLE KEYS */;
-INSERT INTO `product_users` VALUES (3,3,3,0),(4,4,4,0),(5,5,5,0),(6,6,6,0),(7,7,7,0),(8,8,8,0),(9,9,9,0),(10,10,10,0),(11,11,5,3),(12,11,3,3);
+INSERT INTO `product_users` VALUES (4,4,4,0),(5,5,5,0),(6,6,6,0),(8,8,8,0),(11,11,5,3),(15,12,11,1),(23,11,5,3),(24,11,8,1);
 /*!40000 ALTER TABLE `product_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Dayna Veum',0),(3,'Dr. Claud Balistreri Jr.',0),(4,'Matteo Hermann IV',0),(5,'Prof. Neoma Dickens',0),(6,'Buddy Orn',0),(7,'Guiseppe O\'Kon DVM',0),(8,'Jodie Schultz',0),(9,'Dr. Crystal White',0),(10,'Linwood Douglas',0),(11,'produit',3);
+INSERT INTO `products` VALUES (4,'Écran',2),(5,'PC',7),(6,'Souris',0),(8,'Clavier',4),(11,'produit',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +144,7 @@ CREATE TABLE `users` (
   `isadmin` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +153,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Misty Marquardt','bartell.jakayla@example.com','$2y$10$Dox4rUC7YZCXW/84ENXLMOFTM9kIrNcB1m.gLAdSxcSar07KlLZBC',NULL,0),(3,'Keagan Kertzmann','ulangosh@example.net','$2y$10$M3s4nkFpM/VP/oEMfcqCm.m9dO3mmcLOlkdcnt5pNWHQjpoVnVPnm',NULL,0),(4,'Darrell Torphy','bernice.klocko@example.org','$2y$10$LbfmJT99P8QZlBpq0h.CTuNQtxK4EhjqIMotfzx4eVG5kLhQ/4muS',NULL,0),(5,'Stevie Marvin','imoore@example.org','$2y$10$hhTRXB4l1B6EhBgbeOu5QOam9RRClEf6dOjaZEgl7Bhjsj28TfsrW',NULL,0),(6,'Miss Lilyan Hodkiewicz','fabiola.harvey@example.net','$2y$10$LHT8hoHaMxBltpYv.nTHEeXPhYyoXzG.EO9KCGfLkOW/GnZq4ik/W',NULL,0),(7,'Justen Roob','qvon@example.org','$2y$10$Ferih4GFZXPt55dZq6FTUuzvt/CKc47LwCwfR/UQ6cHdoFnSz1gRa',NULL,0),(8,'Wallace Monahan','ngislason@example.com','$2y$10$VInon.FZl/GEx.R/x3edleUj85ORAmbtrO9UmGWiFBg1AMQ/gluum',NULL,0),(9,'Rachel Klein','maddison74@example.com','$2y$10$tXrKOVYE93AVzweY6RAMmeiHC4SkPYX0tOXq6tK9isbjjntA0qW7.',NULL,0),(10,'Mr. Wilburn Hyatt Sr.','prosacco.rosalia@example.net','$2y$10$XDqFl8Xl/t7Wuagrd0d/QuAnqZ1Kp2lqtrHVR.Xt78WuDJAyNZ2la',NULL,0),(11,'admin','admin@gmail.com','$2y$10$TPWX2yg4nAKPnk01WWqAwuT2UMlj66Ju/eO.PDBKqpce0KLR142i2',NULL,1),(12,'name','name@gmail.com','$2y$10$Mfgapm./EdxlWisb48BTi.VuDkyqZI/WQOAyAoyBaMoi24rG5bvui',NULL,0);
+INSERT INTO `users` VALUES (1,'Misty Marquardt','bartell.jakayla@example.com','$2y$10$Dox4rUC7YZCXW/84ENXLMOFTM9kIrNcB1m.gLAdSxcSar07KlLZBC',NULL,0),(3,'Keagan Kertzmann','ulangosh@example.net','$2y$10$M3s4nkFpM/VP/oEMfcqCm.m9dO3mmcLOlkdcnt5pNWHQjpoVnVPnm',NULL,0),(4,'Darrell Torphy','bernice.klocko@example.org','$2y$10$LbfmJT99P8QZlBpq0h.CTuNQtxK4EhjqIMotfzx4eVG5kLhQ/4muS',NULL,0),(5,'Stevie Marvin','imoore@example.org','$2y$10$hhTRXB4l1B6EhBgbeOu5QOam9RRClEf6dOjaZEgl7Bhjsj28TfsrW',NULL,0),(6,'Miss Lilyan Hodkiewicz','fabiola.harvey@example.net','$2y$10$LHT8hoHaMxBltpYv.nTHEeXPhYyoXzG.EO9KCGfLkOW/GnZq4ik/W',NULL,0),(7,'Justen Roob','qvon@example.org','$2y$10$Ferih4GFZXPt55dZq6FTUuzvt/CKc47LwCwfR/UQ6cHdoFnSz1gRa',NULL,0),(8,'Wallace Monahan','ngislason@example.com','$2y$10$VInon.FZl/GEx.R/x3edleUj85ORAmbtrO9UmGWiFBg1AMQ/gluum',NULL,0),(9,'Rachel Klein','maddison74@example.com','$2y$10$tXrKOVYE93AVzweY6RAMmeiHC4SkPYX0tOXq6tK9isbjjntA0qW7.',NULL,0),(10,'Mr. Wilburn Hyatt Sr.','prosacco.rosalia@example.net','$2y$10$XDqFl8Xl/t7Wuagrd0d/QuAnqZ1Kp2lqtrHVR.Xt78WuDJAyNZ2la',NULL,0),(11,'admin','admin@gmail.com','$2y$10$TPWX2yg4nAKPnk01WWqAwuT2UMlj66Ju/eO.PDBKqpce0KLR142i2',NULL,1),(12,'name','name@gmail.com','$2y$10$Mfgapm./EdxlWisb48BTi.VuDkyqZI/WQOAyAoyBaMoi24rG5bvui',NULL,0),(13,'test','test@gmail.com','$2y$10$4GvVQqZEHygRuAjVu/J5veoxPkjVqMu4/0t8TmPbI2gh8bTHKcR9i',NULL,0),(15,'&lt;script&gt;alert(&#039;ok&#039;)&lt;/script&gt;','tes@gmail.com','$2y$10$0R2w/I8.4S2hYhBNJyZTOuYHdnzlouqCCK8BoSrrxIxrYggdJVjvS',NULL,0),(16,'<script>alert(\'ok\')</script>','t@gmail.com','$2y$10$d.3Ike60Wmn.MZTW3U9rnurV6/6DLszqgNnfUUnOQTtTgf6HwnfIe',NULL,0),(17,'&lt;script&gt;alert(&#039;ok&#039;)&lt;/script&gt;','tt@gmail.com','$2y$10$/J5sNjn.MhdU9tkF4vV56ecpCBzebI8ukM24XztwCzi2y7BT08qy2',NULL,0),(18,'a','a@gmail.com','$2y$10$Pl23RRysFan5FNmmaeg5M.dfr9asdJxtRDn6OkKdHhikr/bjpDm6W',NULL,0),(19,'b','b@b.com','$2y$10$1JZkRW.4J03dHA2WNxsFwutufi.GfzAjX7UUXlQFdC0x5Wz3K72iK',NULL,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-02  9:03:34
+-- Dump completed on 2024-04-16 15:35:40
