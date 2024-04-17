@@ -90,7 +90,6 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td style="vertical-align: top;"><img src="pion.png" alt="Pion" width="120px" height="140px"></td>
                             <td>
                                 <div class="right-part-display-telephone">
                                     <div class="subpart-display-telephone">{{ $item->name_product }} <input name="product_id" value="{{ $item->id }}" hidden></div>
