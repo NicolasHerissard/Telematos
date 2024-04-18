@@ -11,6 +11,7 @@ use App\Models\User;
 
 class ProductUserController extends Controller
 {
+    // Renvoie les produits liés à l'utilisateur connecté
     public function showProductUser($id)
     {
         $product_user = User::find($id)->products;
@@ -18,6 +19,7 @@ class ProductUserController extends Controller
         return response()->json($product_user)->setStatusCode(200);
     }
 
+    // Ajoute le produit à l'utilisateur
     public function store(Request $request)
     {
         $user_id = $request->input('user_id');
@@ -37,6 +39,7 @@ class ProductUserController extends Controller
         return response()->json($result);
     }
 
+    // Retire le nombre saisi au stock restant
     public function update_stock($take_product, $id, $stock)
     {
         if($take_product > $stock)
@@ -52,6 +55,7 @@ class ProductUserController extends Controller
         }
     }
 
+    // Supprime la liaison entre l'utilisateur et le produit sélectionné
     public function delete($id)
     {
         $pr = ProductUser::find($id);
@@ -65,6 +69,7 @@ class ProductUserController extends Controller
         return response()->json("supprimé avec succès")->setStatusCode(200);
     }
 
+    // Ajoute le nombre de produit pris au stock restant
     public function update_stock_add($take_product, $id, $stock)
     {
         $pr = Product::find($id);

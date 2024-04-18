@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /*
+        Renvoie la vue home avec les produits 
+    */
     public function home()
     {
         if(auth()->id())

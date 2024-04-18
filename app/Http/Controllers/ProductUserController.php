@@ -10,6 +10,7 @@ use Override;
 
 class ProductUserController extends Controller
 {
+    // Renvoie la vue avec la liste des produits de l'utilisateur connecté
     public function showProductUser($id)
     {
         $user = auth()->user();
@@ -32,12 +33,15 @@ class ProductUserController extends Controller
         ]);
     }
 
+    // Crée une liaison entre le produit et l'utilisateur 
+    // Quand un produit est sélectionné
     public function store(Request $request)
     {
         $user_id = auth()->id();
         $product_id = $request->input('product_id');
         $take_product = $request->input('take_product');
 
+        // Message d'erreur
         if($take_product == null)
             return redirect()->back()->with('error', 'Vous n\'avez pas spécifié la quantité');
 
@@ -54,6 +58,7 @@ class ProductUserController extends Controller
         return redirect()->route('home');
     }
 
+    // Retire le nombre saisi au stock restant
     public function update_stock_remove($take_product, $id, $stock)
     {
         if($take_product > $stock)
@@ -79,6 +84,7 @@ class ProductUserController extends Controller
 
     }
 
+    // Supprime la liaison entre un utilisateur et un produit
     public function delete($id)
     {
         $pr = ProductUser::find($id);
@@ -92,6 +98,7 @@ class ProductUserController extends Controller
         return redirect()->route('home');
     }
 
+    // Ajoute le nombre de produit pris au stock restant
     public function update_stock_add($take_product, $id, $stock)
     {
         $pr = Product::find($id);

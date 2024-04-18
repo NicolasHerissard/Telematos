@@ -37,12 +37,14 @@ class LoginController extends Controller
         return redirect()->route('login');
     }
 
+    // Renvoie la vue administrateur 
     public function admin()
     {
         $user = auth()->user();
         $list_user = User::all();
         $list_product = Product::all();
 
+        // Si le role est égal à 1
         if($user->isadmin == 1)
         {
             return view('admin', [

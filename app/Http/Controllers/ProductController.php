@@ -15,6 +15,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // Renvoie la liste des produits de la vue admin
     public function index()
     {
         $user = auth()->user();
@@ -31,6 +32,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // Renvoie la vue de création des produits
     public function create()
     {
         $user = auth()->user();
@@ -45,6 +47,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // Crée un produit
     public function store(Request $request)
     {
         $user = auth()->user();
@@ -71,6 +74,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // Renvoie la vue d'édition du produit
     public function edit($id)
     {
         $product = Product::find($id);
@@ -87,6 +91,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // Modifie un produit
     public function update(Request $request, $id)
     {
         $user = auth()->user();
@@ -105,6 +110,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // Supprimé un produit 
     public function delete($id)
     {
         $user = auth()->user();
@@ -119,17 +125,5 @@ class ProductController extends Controller
         }
 
         return redirect()->route('home');
-    }
-
-    public function imageToBase64($file)
-    {
-        $image = base64_encode(file_get_contents($file));
-
-        echo $image;
-    }
-
-    public function base64ToImage()
-    {
-
     }
 }

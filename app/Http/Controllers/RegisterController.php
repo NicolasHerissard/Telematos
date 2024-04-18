@@ -13,6 +13,7 @@ class RegisterController extends Controller
         return view('register');
     }
 
+    // Filtre des entrées utilisateur
     private function filter_entry($entry)
     {
         if($entry != "")
