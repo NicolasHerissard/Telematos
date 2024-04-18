@@ -22,6 +22,7 @@
                 <input type="email" placeholder="Email" name="email" required >
                 <input type="password" name="password" placeholder="Mot de Passe" required >
                 <button type="submit">Enregistrer</button>
+                <a class="regis_a" href="/login">Connectez vous !</a>
             </form>
             @if (Session::has('error'))
                 <div class="error">

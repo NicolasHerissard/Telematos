@@ -43,13 +43,14 @@
             </div>
         @endif
     </div>
-
-    <div class="tableau">
-        @if (Session::has('error'))
+    
+    @if (Session::has('error'))
             <div class="error">
                 {{ Session::get('error') }}
             </div>
         @endif
+    <div class="tableau">
+        
         <table class="tableauValeur">
             <thead>
                 <tr>

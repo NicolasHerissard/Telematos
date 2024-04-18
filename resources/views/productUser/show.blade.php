@@ -11,13 +11,15 @@
 </head>
 <body>
     
-
-    <div class="tableau">
-        @if (Session::has('error'))
-            <div class="error">
+    @if (Session::has('error'))
+            <div class="error"> 
                 {{ Session::get('error') }}
             </div>
+            <br>
+            
         @endif
+    <div class="tableau">
+        
         <table class="tableauValeur">
             <thead>
                 <tr>

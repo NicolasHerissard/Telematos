@@ -91,7 +91,7 @@ header {
     color: #33396c;
 }
 
-.main {
+.main, .regis_a {
     display: flex;
     justify-content: center;
 }
@@ -437,3 +437,5 @@ td {
     display: inline-block;
     margin: 5px;
 }
+
+
