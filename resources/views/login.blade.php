@@ -54,7 +54,6 @@
                 <input type="text" placeholder="Nom" name="name">
                 <input type="password" placeholder="Password" name="password">
                 <button>Connexion</button>
-                <a class="regis_a" href="/register">Inscrivez vous !</a>
             </form>
             @if (Session::has('error'))
                 <div class="error">
